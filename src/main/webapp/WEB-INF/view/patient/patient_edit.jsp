@@ -51,7 +51,6 @@
 								<p class="card-description">
 									个人信息 :
 								</p>
-								<hr style="color: red;size: 80px;width: 10px"/>
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group row">
