@@ -95,12 +95,16 @@
 												WD-12345
 											</td>
 											<td>
-												<button type="button" class="btn btn-gradient-success btn-rounded btn-icon">
+												<a href="${pageContext.request.contextPath}/patient/edit">
+													<button type="button" class="btn btn-gradient-success btn-rounded btn-icon" >
 													<i class="mdi mdi-file-find"></i>
-												</button>
-												<button type="button" class="btn btn-gradient-info btn-rounded btn-icon">
-													<i class="mdi mdi-border-color"></i>
-												</button>
+													</button>
+												</a>
+												<a href="${pageContext.request.contextPath}/patient/edit">
+													<button type="button" class="btn btn-gradient-info btn-rounded btn-icon">
+														<i class="mdi mdi-border-color"></i>
+													</button>
+												</a>
 												<button type="button" class="btn btn-gradient-danger btn-rounded btn-icon">
 													<i class="mdi mdi-delete-forever"></i>
 												</button>
