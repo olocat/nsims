@@ -9,4 +9,20 @@ public class AdminController {
 	public String index(){
 		return "index";
 	}
+	@RequestMapping("/patient_info")
+	public String patientInfo(){
+		return "admin/patient_info";
+	}
+	@RequestMapping("/nurse_info")
+	public String nurseInfo(){
+		return "admin/nurse_info";
+	}
+	@RequestMapping("/doctor_info")
+	public String doctorInfo(){
+		return "admin/doctor_info";
+	}
+	@RequestMapping("/ward_info")
+	public String wardInfo(){
+		return "admin/ward_info";
+	}
 }

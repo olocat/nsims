@@ -14,42 +14,31 @@
 			</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="/index.html">
+			<a class="nav-link" href="${pageContext.request.contextPath}/index">
 				<span class="menu-title">主页</span>
 				<i class="mdi mdi-home menu-icon"></i>
 			</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="/index.html">
+			<a class="nav-link" href="${pageContext.request.contextPath}/patient_info">
 				<span class="menu-title">住院信息</span>
 				<i class="mdi mdi-thermometer-lines menu-icon"></i>
 			</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="/WEB-INF/view/icons/mdi.html">
+			<a class="nav-link" href="${pageContext.request.contextPath}/nurse_info">
 				<span class="menu-title">护士信息</span>
 				<i class="mdi mdi-needle menu-icon"></i>
 			</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+			<a class="nav-link" href="${pageContext.request.contextPath}/ward_info">
 				<span class="menu-title">病房管理</span>
-				<i class="menu-arrow"></i>
 				<i class="mdi mdi-clipboard-outline menu-icon"></i>
 			</a>
-			<div class="collapse" id="ui-basic">
-				<ul class="nav flex-column sub-menu">
-					<li class="nav-item">
-						<a class="nav-link" href="/WEB-INF/view/ui-features/buttons.html">病房信息</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="/WEB-INF/view/ui-features/typography.html">床位信息</a>
-					</li>
-				</ul>
-			</div>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="/WEB-INF/view/charts/chartjs.html">
+			<a class="nav-link" href="${pageContext.request.contextPath}/doctor_info">
 				<span class="menu-title">医生信息</span>
 				<i class="mdi mdi-stethoscope menu-icon"></i>
 			</a>
