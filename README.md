@@ -6,17 +6,21 @@
 方便护士快速查找和管理病人信息。这大概是我的理解  
 主要模块就是病人管理了。
 ---
-### :date:创建日期：2019/8/7  
-### :pencil2:项目作者：olocat  
-### :newspaper:作者博客：[www.ololcat.com](https://www.olocat.com)
-  
+### :date: 创建日期：2019/8/7  
+### :pencil2: 项目作者：olocat  
+### :newspaper: 作者博客：[www.ololcat.com](https://www.olocat.com)
+### :memo: 前端框架：Bootstrap
+### :book: 后端框架：Spring SpringMVC MyBatis (SSM)
+### :scissors: 前端工具：WebStorm 2019.2
+### :hammer: 后端工具：IntelliJ IDEA 2019.2
+### :triangular_ruler: 数据库工具：DataGrip 2019.2
 ## 开发工具
 
 | 工具   | 版本或描述           |    
 | ----- | -------------------- |    
 | OS    | Windows 10           |    
 | JDK   | 1.8                  |    
-| IDE   | IntelliJ IDEA 2019.3 |    
+| IDE   | IntelliJ IDEA 2019.2 |    
 | Maven | 3.3.1                |    
 | MySQL | 8.0                  |                
 
