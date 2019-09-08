@@ -37,7 +37,6 @@
     <ognl.version>3.2.10</ognl.version>
     <commons.version>2.7.0</commons.version>
     <commons.logging.version>1.2</commons.logging.version>
-    <kaptcha.version>2.3.2</kaptcha.version>
   </properties>
 
   <dependencies>
@@ -216,12 +215,6 @@
       <artifactId>junit-jupiter</artifactId>
       <version>RELEASE</version>
       <scope>compile</scope>
-    </dependency>
-    <!-- 工具类 -->
-    <dependency>
-      <groupId>com.github.penggle</groupId>
-      <artifactId>kaptcha</artifactId>
-      <version>${kaptcha.version}</version>
     </dependency>
 
   </dependencies>
