@@ -9,8 +9,8 @@ public class Patient {
 	private String gender;		//性别
 	private int age;			//年龄
 	private String carID;		//身份证号
-	private long contentPhoneNumber;	//联系人电话
-	private long emergencyContentPhoneNumber;	//紧急联系人电话
+	private String contentPhoneNumber;	//联系人电话
+	private String emergencyContentPhoneNumber;	//紧急联系人电话
 	private String admissionDate;		//入院日期
 	private String bloodType;		//血型
 	private String patientCondition;		//病况
@@ -68,19 +68,19 @@ public class Patient {
 		this.carID = carID;
 	}
 
-	public long getContentPhoneNumber() {
+	public String getContentPhoneNumber() {
 		return contentPhoneNumber;
 	}
 
-	public void setContentPhoneNumber(long contentPhoneNumber) {
+	public void setContentPhoneNumber(String  contentPhoneNumber) {
 		this.contentPhoneNumber = contentPhoneNumber;
 	}
 
-	public long getEmergencyContentPhoneNumber() {
+	public String  getEmergencyContentPhoneNumber() {
 		return emergencyContentPhoneNumber;
 	}
 
-	public void setEmergencyContentPhoneNumber(long emergencyContentPhoneNumber) {
+	public void setEmergencyContentPhoneNumber(String  emergencyContentPhoneNumber) {
 		this.emergencyContentPhoneNumber = emergencyContentPhoneNumber;
 	}
 
