@@ -1,6 +1,6 @@
+<%@ page contentType="text/html; charset=UTF-8" language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="cn">
-<%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="java.util.*" %>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -67,9 +67,6 @@
 												科室
 											</th>
 											<th>
-												入院日期
-											</th>
-											<th>
 												护士 ID
 											</th>
 											<th>
@@ -80,20 +77,17 @@
 										<tbody>
 										<tr>
 											<td>
-												<img src="resources/images/faces/face1.jpg" class="mr-2" alt="image">
-												David Grey
+												<img src="${pageContext.request.contextPath}/resources/images/faces/face15.jpg" class="mr-2" alt="image">
+												Grey
 											</td>
 											<td>
-												Fund is not recieved
+												1201
 											</td>
 											<td>
-												<label class="badge badge-gradient-success">DONE</label>
+												<label class="badge badge-gradient-success">外科</label>
 											</td>
 											<td>
-												Dec 5, 2017
-											</td>
-											<td>
-												WD-12345
+												ns120001
 											</td>
 											<td>
 												<button type="button"
@@ -112,56 +106,47 @@
 										</tr>
 										<tr>
 											<td>
-												<img src="resources/images/faces/face2.jpg" class="mr-2" alt="image">
-												Stella Johnson
+												<img src="${pageContext.request.contextPath}/resources/images/faces/face12.jpg" class="mr-2" alt="image">
+												Stella
 											</td>
 											<td>
-												High loading time
+												1102
 											</td>
 											<td>
-												<label class="badge badge-gradient-warning">PROGRESS</label>
+												<label class="badge badge-gradient-warning">内科</label>
 											</td>
 											<td>
-												Dec 12, 2017
-											</td>
-											<td>
-												WD-12346
+												ns110001
 											</td>
 										</tr>
 										<tr>
 											<td>
-												<img src="resources/images/faces/face3.jpg" class="mr-2" alt="image">
-												Marina Michel
+												<img src="${pageContext.request.contextPath}/resources/images/faces/face13.jpg" class="mr-2" alt="image">
+												Marina
 											</td>
 											<td>
-												Website down for one week
+												1001
 											</td>
 											<td>
-												<label class="badge badge-gradient-info">ON HOLD</label>
+												<label class="badge badge-gradient-info">儿科</label>
 											</td>
 											<td>
-												Dec 16, 2017
-											</td>
-											<td>
-												WD-12347
+												ns100001
 											</td>
 										</tr>
 										<tr>
 											<td>
-												<img src="resources/images/faces/face4.jpg" class="mr-2" alt="image">
-												John Doe
+												<img src="${pageContext.request.contextPath}/resources/images/faces/face14.jpg" class="mr-2" alt="image">
+												John
 											</td>
 											<td>
-												Loosing control on server
+												903
 											</td>
 											<td>
-												<label class="badge badge-gradient-danger">REJECTED</label>
+												<label class="badge badge-gradient-danger">骨科</label>
 											</td>
 											<td>
-												Dec 3, 2017
-											</td>
-											<td>
-												WD-12348
+												ns090002
 											</td>
 										</tr>
 										</tbody>

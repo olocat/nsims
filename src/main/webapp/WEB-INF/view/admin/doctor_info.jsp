@@ -61,16 +61,13 @@
 												姓名
 											</th>
 											<th>
-												负责病室
+												职位
 											</th>
 											<th>
 												科室
 											</th>
 											<th>
-												入院日期
-											</th>
-											<th>
-												医生 ID
+												护士 ID
 											</th>
 											<th>
 												选项
@@ -80,20 +77,17 @@
 										<tbody>
 										<tr>
 											<td>
-												<img src="resources/images/faces/face1.jpg" class="mr-2" alt="image">
-												David Grey
+												<img src="${pageContext.request.contextPath}/resources/images/faces/face21.jpg" class="mr-2" alt="image">
+												Bavarian
 											</td>
 											<td>
-												Fund is not recieved
+												<label class="badge badge-gradient-primary">主任</label>
 											</td>
 											<td>
-												<label class="badge badge-gradient-success">DONE</label>
+												<label class="badge badge-gradient-success">外科</label>
 											</td>
 											<td>
-												Dec 5, 2017
-											</td>
-											<td>
-												WD-12345
+												dc120001
 											</td>
 											<td>
 												<button type="button"
@@ -112,56 +106,47 @@
 										</tr>
 										<tr>
 											<td>
-												<img src="resources/images/faces/face2.jpg" class="mr-2" alt="image">
-												Stella Johnson
+												<img src="${pageContext.request.contextPath}/resources/images/faces/face22.jpg" class="mr-2" alt="image">
+												Mdivo
 											</td>
 											<td>
-												High loading time
+												<label class="badge badge-gradient-primary">主任</label>
 											</td>
 											<td>
-												<label class="badge badge-gradient-warning">PROGRESS</label>
+												<label class="badge badge-gradient-warning">内科</label>
 											</td>
 											<td>
-												Dec 12, 2017
-											</td>
-											<td>
-												WD-12346
+												dc110001
 											</td>
 										</tr>
 										<tr>
 											<td>
-												<img src="resources/images/faces/face3.jpg" class="mr-2" alt="image">
-												Marina Michel
+												<img src="${pageContext.request.contextPath}/resources/images/faces/face23.jpg" class="mr-2" alt="image">
+												Venis
 											</td>
 											<td>
-												Website down for one week
+												<label class="badge badge-gradient-primary">主任</label>
 											</td>
 											<td>
-												<label class="badge badge-gradient-info">ON HOLD</label>
+												<label class="badge badge-gradient-info">儿科</label>
 											</td>
 											<td>
-												Dec 16, 2017
-											</td>
-											<td>
-												WD-12347
+												dc100001
 											</td>
 										</tr>
 										<tr>
 											<td>
-												<img src="resources/images/faces/face4.jpg" class="mr-2" alt="image">
-												John Doe
+												<img src="${pageContext.request.contextPath}/resources/images/faces/face24.jpg" class="mr-2" alt="image">
+												Johnson
 											</td>
 											<td>
-												Loosing control on server
+												<label class="badge badge-gradient-primary">主任</label>
 											</td>
 											<td>
-												<label class="badge badge-gradient-danger">REJECTED</label>
+												<label class="badge badge-gradient-danger">骨科</label>
 											</td>
 											<td>
-												Dec 3, 2017
-											</td>
-											<td>
-												WD-12348
+												dc090002
 											</td>
 										</tr>
 										</tbody>

@@ -68,18 +68,22 @@
 											<th>
 												床位状态
 											</th>
+											<th></th>
 										</tr>
 										</thead>
 										<tbody>
 										<tr>
 											<td>
-												301
+												1201
 											</td>
 											<td>
-												Herman Beck
+												<label class="badge badge-gradient-success">外科</label>
 											</td>
 											<td>
-												May 15, 2015
+												Maives
+											</td>
+											<td>
+												1/4
 											</td>
 											<td>
 												<div class="progress">
@@ -91,53 +95,41 @@
 										</tr>
 										<tr>
 											<td>
-												302
+												1202
 											</td>
 											<td>
-												Messsy Adam
+												<label class="badge badge-gradient-success">外科</label>
 											</td>
 											<td>
-												Jul 01, 2015
+												Juler
+											</td>
+											<td>
+												2/6
 											</td>
 											<td>
 												<div class="progress">
 													<div class="progress-bar bg-gradient-danger" role="progressbar"
-														 style="width: 75%" aria-valuenow="75" aria-valuemin="0"
+														 style="width: 33%" aria-valuenow="33" aria-valuemin="0"
 														 aria-valuemax="100"></div>
 												</div>
 											</td>
 										</tr>
 										<tr>
 											<td>
-												303
+												1101
 											</td>
 											<td>
-												John Richards
+												<label class="badge badge-gradient-warning">内科</label>
 											</td>
 											<td>
-												Apr 12, 2015
+												Aprev
+											</td>
+											<td>
+												3/6
 											</td>
 											<td>
 												<div class="progress">
 													<div class="progress-bar bg-gradient-warning" role="progressbar"
-														 style="width: 90%" aria-valuenow="90" aria-valuemin="0"
-														 aria-valuemax="100"></div>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												304
-											</td>
-											<td>
-												Peter Meggik
-											</td>
-											<td>
-												May 15, 2015
-											</td>
-											<td>
-												<div class="progress">
-													<div class="progress-bar bg-gradient-primary" role="progressbar"
 														 style="width: 50%" aria-valuenow="50" aria-valuemin="0"
 														 aria-valuemax="100"></div>
 												</div>
@@ -145,36 +137,63 @@
 										</tr>
 										<tr>
 											<td>
-												305
+												1102
 											</td>
 											<td>
-												Edward
+												<label class="badge badge-gradient-warning">内科</label>
 											</td>
 											<td>
-												May 03, 2015
+												Matha
+											</td>
+											<td>
+												6/6
 											</td>
 											<td>
 												<div class="progress">
-													<div class="progress-bar bg-gradient-danger" role="progressbar"
-														 style="width: 35%" aria-valuenow="35" aria-valuemin="0"
+													<div class="progress-bar bg-gradient-primary" role="progressbar"
+														 style="width: 100%" aria-valuenow="100" aria-valuemin="0"
 														 aria-valuemax="100"></div>
 												</div>
 											</td>
 										</tr>
 										<tr>
 											<td>
-												306
+												1001
 											</td>
 											<td>
-												Ronald
+												<label class="badge badge-gradient-info">儿科</label>
 											</td>
 											<td>
-												Jun 05, 2015
+												Obeve
+											</td>
+											<td>
+												4/6
+											</td>
+											<td>
+												<div class="progress">
+													<div class="progress-bar bg-gradient-danger" role="progressbar"
+														 style="width: 66%" aria-valuenow="66" aria-valuemin="0"
+														 aria-valuemax="100"></div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												1002
+											</td>
+											<td>
+												<label class="badge badge-gradient-info">儿科</label>
+											</td>
+											<td>
+												Jun
+											</td>
+											<td>
+												3/4
 											</td>
 											<td>
 												<div class="progress">
 													<div class="progress-bar bg-gradient-info" role="progressbar"
-														 style="width: 90%" aria-valuenow="90" aria-valuemin="0"
+														 style="width: 75%" aria-valuenow="75" aria-valuemin="0"
 														 aria-valuemax="100"></div>
 												</div>
 											</td>
