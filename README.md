@@ -13,7 +13,7 @@
 ### :pencil2: 项目作者：olocat  
 ### :newspaper: 作者博客：[www.ololcat.com](https://www.olocat.com)
 ### :memo: 前端框架：Bootstrap
-### :book: 后端框架：Spring  SpringMVC  MyBatis  (SSM)
+### :book: 后端框架：Spring + SpringMVC + MyBatis = (SSM)
 ### :scissors: 前端工具：WebStorm 2019.2
 ### :hammer: 后端工具：IntelliJ IDEA 2019.2
 ### :triangular_ruler: 数据库工具：DataGrip 2019.2
