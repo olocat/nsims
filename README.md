@@ -1,4 +1,7 @@
-![IDE](https://img.shields.io/badge/IDE-IntelliJ%20IDEA-brightgreen.svg) ![Java](https://img.shields.io/badge/Java-1.8-blue.svg) ![Database](https://img.shields.io/badge/Database-MySQL-lightgrey.svg) 
+![IDE](https://img.shields.io/badge/IDE-IntelliJ%20IDEA-brightgreen.svg)
+![Java](https://img.shields.io/badge/Java-1.8-blue.svg)
+![Database](https://img.shields.io/badge/Database-MySQL-lightgrey.svg)
+![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103) 
 # :hospital: 护士站管理系统
 ### 前言：
  :bookmark_tabs: 毕业设计，竟然让做护士站管理系统。讲真，以前从未听说过。这个课题也是真心的有点醉。 :expressionless: :expressionless:   
