@@ -12,7 +12,7 @@
 	<%--	引用上栏和左侧菜单及页脚的内容 --%>
 	<link rel="import" href="${pageContext.request.contextPath}/resources/partials/_navbar.jsp" id="_navbar"/>
 	<link rel="import" href="${pageContext.request.contextPath}/resources/partials/_sidebar.jsp" id="_sidebar"/>
-	<link rel="import" href="${pageContext.request.contextPath}/resources/partials/_footer.html" id="_footer"/>
+	<link rel="import" href="${pageContext.request.contextPath}/resources/partials/_footer.jsp" id="_footer"/>
 </head>
 <body>
 <div class="container-scroller">

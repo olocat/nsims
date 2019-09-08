@@ -3,20 +3,19 @@
 <html lang="cn">
 <%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="java.util.*"%>
 <%
-
-	String path = request.getContextPath();
+	String path = "";
 %>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Purple Admin</title>
+	<title>护士站管理系统</title>
 	<link rel="stylesheet" href="<%=path%>/resources/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
 	<link rel="stylesheet" href="<%=path%>/resources/vendors/css/vendor.bundle.base.css">
 	<link rel="stylesheet" href="<%=path%>/resources/css/style.css">
 	<link rel="shortcut icon" href="<%=path%>/resources/images/favicon.png"/>
 	<link rel="import" href="<%=path%>/resources/partials/_navbar.jsp" id="_navbar"/>
 	<link rel="import" href="<%=path%>/resources/partials/_sidebar.jsp" id="_sidebar"/>
-	<link rel="import" href="<%=path%>/resources/partials/_footer.html" id="_footer"/>
+	<link rel="import" href="<%=path%>/resources/partials/_footer.jsp" id="_footer"/>
 	<%--	用于去除链接文字下方的下划线，如果不去除则会破坏按钮整体感 --%>
 	<style type="text/css">
 		a{

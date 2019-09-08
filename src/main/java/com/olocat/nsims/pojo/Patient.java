@@ -2,6 +2,13 @@ package com.olocat.nsims.pojo;
 
 import java.sql.Date;
 
+/**
+ * 病人信息类
+ * @author olocat
+ * @date 2019/9/8
+ * @table patient
+ * @version 0.1.2
+ */
 public class Patient {
 	private String patientID;	//用户id
 	private String patientFaceID;	//用户头像id

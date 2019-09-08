@@ -12,7 +12,7 @@
 	<%--	引用上栏和左侧菜单及页脚的内容 --%>
 	<link rel="import" href="${pageContext.request.contextPath}/resources/partials/_navbar.jsp" id="_navbar"/>
 	<link rel="import" href="${pageContext.request.contextPath}/resources/partials/_sidebar.jsp" id="_sidebar"/>
-	<link rel="import" href="${pageContext.request.contextPath}/resources/partials/_footer.html" id="_footer"/>
+	<link rel="import" href="${pageContext.request.contextPath}/resources/partials/_footer.jsp" id="_footer"/>
 	<%--	该样式用于去掉鼠标移动到链接时，链接文字下方出现下划线 ， 如不去掉会破坏按钮的整体感--%>
 	<style type="text/css">
 		a{

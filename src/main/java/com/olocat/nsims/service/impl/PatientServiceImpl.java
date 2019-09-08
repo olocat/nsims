@@ -8,6 +8,12 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * 病人数据 Mapper 实体类
+ * @author olocat
+ * @date 2019/9/8
+ * @version 0.1.1
+ */
 @Service
 public class PatientServiceImpl implements PatientService {
 
