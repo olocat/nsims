@@ -12,6 +12,12 @@
 	<link rel="import" href="${pageContext.request.contextPath}/resources/partials/_navbar.jsp" id="_navbar"/>
 	<link rel="import" href="${pageContext.request.contextPath}/resources/partials/_sidebar.jsp" id="_sidebar"/>
 	<link rel="import" href="${pageContext.request.contextPath}/resources/partials/_footer.html" id="_footer"/>
+	<%--	用于去除链接文字下方的下划线，如果不去除则会破坏按钮整体感 --%>
+	<style type="text/css">
+		a{
+			text-decoration: none;
+		}
+	</style>
 </head>
 <body>
 <div class="container-scroller">

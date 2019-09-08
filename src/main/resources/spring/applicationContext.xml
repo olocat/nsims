@@ -34,13 +34,13 @@
 		<!-- 注入数据库连接池 -->
 		<property name="dataSource" ref="dataSource"/>
 		<!-- 扫描pojo包，使用别名配置(在mybatis中可以使用别名，即pojo的名称) -->
-		<property name="typeAliasesPackage" value="com.olocat.pojo"/>
+		<property name="typeAliasesPackage" value="com.olocat.nsims.pojo"/>
 		<!--mapper.xml所在位置-->
 		<property name="mapperLocations" value="classpath*:mapper/*Mapper.xml" />
 	</bean>
 	<!-- 配置mapper扫描器 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.olocat.mapper"/>
+		<property name="basePackage" value="com.olocat.nsims.mapper"/>
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
 	</bean>
 	<!-- 扫描Service -->

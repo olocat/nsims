@@ -44,12 +44,12 @@
 		<!-- *.do 表示我们请求映射路径后缀为.do，  我们也可以设置为/ -->
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	<error-page>
-		<error-code>404</error-code>
-		<location>/resources/error/404.jsp</location>
-	</error-page>
-	<error-page>
-		<error-code>500</error-code>
-		<location>/resources/error/error-500.html</location>
-	</error-page>
+<!--	<error-page>-->
+<!--		<error-code>404</error-code>-->
+<!--		<location>/resources/error/404.jsp</location>-->
+<!--	</error-page>-->
+<!--	<error-page>-->
+<!--		<error-code>500</error-code>-->
+<!--		<location>/resources/error/error-500.html</location>-->
+<!--	</error-page>-->
 </web-app>

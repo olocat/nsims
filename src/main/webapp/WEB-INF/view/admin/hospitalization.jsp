@@ -13,6 +13,12 @@
 	<link rel="import" href="${pageContext.request.contextPath}/resources/partials/_navbar.jsp" id="_navbar"/>
 	<link rel="import" href="${pageContext.request.contextPath}/resources/partials/_sidebar.jsp" id="_sidebar"/>
 	<link rel="import" href="${pageContext.request.contextPath}/resources/partials/_footer.html" id="_footer"/>
+	<%--	该样式用于去掉鼠标移动到链接时，链接文字下方出现下划线 ， 如不去掉会破坏按钮的整体感--%>
+	<style type="text/css">
+		a{
+			text-decoration: none
+		}
+	</style>
 </head>
 <body>
 <div class="container-scroller">
@@ -32,14 +38,14 @@
 					  <span class="page-title-icon bg-gradient-primary text-white mr-2">
 						<i class="mdi mdi-table-edit"></i>
 					  </span>
-						修改住院信息
+						办理住院
 					</h3>
 					<nav aria-label="breadcrumb">
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item">
-								<a href="${pageContext.request.contextPath}/patient_info">住院信息</a>
+								<a href="${pageContext.request.contextPath}/patient_info">主页</a>
 							</li>
-							<li class="breadcrumb-item active" aria-current="page">修改住院信息</li>
+							<li class="breadcrumb-item active" aria-current="page">办理住院</li>
 						</ol>
 					</nav>
 				</div>
@@ -47,8 +53,8 @@
 				<div class="col-12 grid-margin">
 					<div class="card">
 						<div class="card-body">
-							<h4 class="card-title">修改病人信息</h4>
-							<form class="form-sample" action="${pageContext.request.contextPath}/patient/edit.do" method="post">
+							<h4 class="card-title">添写住院信息</h4>
+							<form class="form-sample" action="${pageContext.request.contextPath}/patient/add" method="post">
 								<p class="card-description">
 									个人信息 :
 								</p>
@@ -57,7 +63,7 @@
 										<div class="form-group row">
 											<label class="col-sm-3 col-form-label" >ID</label>
 											<div class="col-sm-9">
-												<input type="text" class="form-control" name="patientID" value="${patient.patientID}"/>
+												<input type="text" class="form-control" name="patientID"/>
 											</div>
 										</div>
 									</div>
@@ -65,28 +71,28 @@
 										<div class="form-group row">
 											<label class="col-sm-3 col-form-label">姓名</label>
 											<div class="col-sm-9">
-												<input type="text" class="form-control" name="name" value="${patient.name}"/>
+												<input type="text" class="form-control" name="name"/>
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="row">
-									<%--									<div class="col-md-6">--%>
-									<%--										<div class="form-group row">--%>
-									<%--											<label class="col-sm-3 col-form-label">性别</label>--%>
-									<%--											<div class="col-sm-9">--%>
-									<%--												<select class="form-control" name="gender">--%>
-									<%--													<option value="male">男</option>--%>
-									<%--													<option value="female">女</option>--%>
-									<%--												</select>--%>
-									<%--											</div>--%>
-									<%--										</div>--%>
-									<%--									</div>--%>
+<%--									<div class="col-md-6">--%>
+<%--										<div class="form-group row">--%>
+<%--											<label class="col-sm-3 col-form-label">性别</label>--%>
+<%--											<div class="col-sm-9">--%>
+<%--												<select class="form-control" name="gender">--%>
+<%--													<option value="male">男</option>--%>
+<%--													<option value="female">女</option>--%>
+<%--												</select>--%>
+<%--											</div>--%>
+<%--										</div>--%>
+<%--									</div>--%>
 									<div class="col-md-6">
 										<div class="form-group row">
 											<label class="col-sm-3 col-form-label">性别</label>
 											<div class="col-sm-9">
-												<input class="form-control" name="gender" value="${patient.gender}"/>
+												<input class="form-control" name="gender"/>
 											</div>
 										</div>
 									</div>
@@ -94,7 +100,7 @@
 										<div class="form-group row">
 											<label class="col-sm-3 col-form-label">年龄</label>
 											<div class="col-sm-9">
-												<input class="form-control" name="age" value="${patient.age}"/>
+												<input class="form-control" name="age"/>
 											</div>
 										</div>
 									</div>
@@ -104,7 +110,7 @@
 										<div class="form-group row">
 											<label class="col-sm-3 col-form-label">身份证号码</label>
 											<div class="col-sm-9">
-												<input class="form-control" name="carID" value="${patient.carID}"/>
+												<input class="form-control" name="carID"/>
 											</div>
 										</div>
 									</div>
@@ -112,7 +118,7 @@
 										<div class="form-group row">
 											<label class="col-sm-3 col-form-label">联系电话</label>
 											<div class="col-sm-9">
-												<input class="form-control" name="contentPhoneNumber" value="${patient.contentPhoneNumber}"/>
+												<input class="form-control" name="contentPhoneNumber"/>
 											</div>
 										</div>
 									</div>
@@ -122,7 +128,7 @@
 										<div class="form-group row">
 											<label class="col-sm-3 col-form-label">紧急联系人</label>
 											<div class="col-sm-9">
-												<input class="form-control" name="emergencyContentPhoneNumber" value="${patient.emergencyContentPhoneNumber}"/>
+												<input class="form-control" name="emergencyContentPhoneNumber"/>
 											</div>
 										</div>
 									</div>
@@ -130,7 +136,7 @@
 										<div class="form-group row">
 											<label class="col-sm-3 col-form-label">入院日期</label>
 											<div class="col-sm-9">
-												<input class="form-control" name="admissionDate" value="${patient.admissionDate}"/>
+												<input class="form-control" name="admissionDate"/>
 											</div>
 										</div>
 									</div>
@@ -139,25 +145,25 @@
 									医疗信息 :
 								</p>
 								<div class="row">
-									<%--									<div class="col-md-6">--%>
-									<%--										<div class="form-group row">--%>
-									<%--											<label class="col-sm-3 col-form-label">血型</label>--%>
-									<%--											<div class="col-sm-9">--%>
-									<%--												<select class="form-control" name="bloodType">--%>
-									<%--													<option value="A">A</option>--%>
-									<%--													<option value="B">B</option>--%>
-									<%--													<option value="0">O</option>--%>
-									<%--													<option value="AB">AB</option>--%>
-									<%--													<option value="special">特殊</option>--%>
-									<%--												</select>--%>
-									<%--											</div>--%>
-									<%--										</div>--%>
-									<%--									</div>--%>
+<%--									<div class="col-md-6">--%>
+<%--										<div class="form-group row">--%>
+<%--											<label class="col-sm-3 col-form-label">血型</label>--%>
+<%--											<div class="col-sm-9">--%>
+<%--												<select class="form-control" name="bloodType">--%>
+<%--													<option value="A">A</option>--%>
+<%--													<option value="B">B</option>--%>
+<%--													<option value="0">O</option>--%>
+<%--													<option value="AB">AB</option>--%>
+<%--													<option value="special">特殊</option>--%>
+<%--												</select>--%>
+<%--											</div>--%>
+<%--										</div>--%>
+<%--									</div>--%>
 									<div class="col-md-6">
 										<div class="form-group row">
 											<label class="col-sm-3 col-form-label">血型</label>
 											<div class="col-sm-9">
-												<input class="form-control" name="bloodType" value="${patient.bloodType}"/>
+												<input class="form-control" name="bloodType"/>
 											</div>
 										</div>
 									</div>
@@ -165,7 +171,7 @@
 										<div class="form-group row">
 											<label class="col-sm-3 col-form-label">病况</label>
 											<div class="col-sm-9">
-												<input class="form-control" name="patientCondition" value="${patient.patientCondition}"/>
+												<input class="form-control" name="patientCondition"/>
 											</div>
 										</div>
 									</div>
@@ -175,7 +181,7 @@
 										<div class="form-group row">
 											<label class="col-sm-3 col-form-label">责任医师</label>
 											<div class="col-sm-9">
-												<input class="form-control" name="doctorID" value="${patient.doctorID}"/>
+												<input class="form-control" name="doctorID"/>
 											</div>
 										</div>
 									</div>
@@ -183,7 +189,7 @@
 										<div class="form-group row">
 											<label class="col-sm-3 col-form-label">科室</label>
 											<div class="col-sm-9">
-												<input class="form-control" name="department" value="${patient.department}"/>
+												<input class="form-control" name="department"/>
 											</div>
 										</div>
 									</div>
@@ -193,7 +199,7 @@
 										<div class="form-group row">
 											<label class="col-sm-3 col-form-label">病房</label>
 											<div class="col-sm-9">
-												<input type="text" class="form-control" name="ward" value="${patient.ward}"/>
+												<input type="text" class="form-control" name="ward"/>
 											</div>
 										</div>
 									</div>
@@ -201,30 +207,30 @@
 										<div class="form-group row">
 											<label class="col-sm-3 col-form-label">床位</label>
 											<div class="col-sm-9">
-												<input class="form-control" name="bedNumber" value="${patient.bedNumber}"/>
+												<input class="form-control" name="bedNumber"/>
 											</div>
 										</div>
 									</div>
-									<%--									<div class="col-md-6">--%>
-									<%--										<div class="form-group row">--%>
-									<%--											<label class="col-sm-3 col-form-label">床位</label>--%>
-									<%--											<div class="col-sm-9">--%>
-									<%--												<select class="form-control" name="bedNumber">--%>
-									<%--													<option value="01">01</option>--%>
-									<%--													<option value="02">02</option>--%>
-									<%--													<option value="03">03</option>--%>
-									<%--													<option value="04">04</option>--%>
-									<%--													<option value="05">05</option>--%>
-									<%--													<option value="06">06</option>--%>
-									<%--												</select>--%>
-									<%--											</div>--%>
-									<%--										</div>--%>
-									<%--									</div>--%>
+<%--									<div class="col-md-6">--%>
+<%--										<div class="form-group row">--%>
+<%--											<label class="col-sm-3 col-form-label">床位</label>--%>
+<%--											<div class="col-sm-9">--%>
+<%--												<select class="form-control" name="bedNumber">--%>
+<%--													<option value="01">01</option>--%>
+<%--													<option value="02">02</option>--%>
+<%--													<option value="03">03</option>--%>
+<%--													<option value="04">04</option>--%>
+<%--													<option value="05">05</option>--%>
+<%--													<option value="06">06</option>--%>
+<%--												</select>--%>
+<%--											</div>--%>
+<%--										</div>--%>
+<%--									</div>--%>
 								</div>
 								<div class="row">
 									<label class="col-sm-9 col-form-label">病情信息</label>
 									<div class="col-sm-9">
-										<input type="text" class="form-control" name="diseaseInformation" value="${patient.diseaseInformation}"/>
+										<input type="text" class="form-control" name="diseaseInformation"/>
 									</div>
 								</div><br/>
 								<button type="submit" class="btn btn-gradient-primary btn-icon-text">
@@ -235,11 +241,10 @@
 									<i class="mdi mdi-alert btn-icon-prepend"></i>
 									重置
 								</button>
-								<a href="${pageContext.request.contextPath}/patient_info">
 								<button type="button" class="btn btn-gradient-danger btn-icon-text">
 									<i class="mdi mdi-upload btn-icon-prepend"></i>
 									返回
-								</button></a>
+								</button>
 							</form>
 						</div>
 					</div>

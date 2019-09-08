@@ -1,17 +1,28 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="cn">
 <%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="java.util.*"%>
+<%
+
+	String path = request.getContextPath();
+%>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Purple Admin</title>
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/vendors/css/vendor.bundle.base.css">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css">
-	<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/images/favicon.png"/>
-	<link rel="import" href="${pageContext.request.contextPath}/resources/partials/_navbar.jsp" id="_navbar"/>
-	<link rel="import" href="${pageContext.request.contextPath}/resources/partials/_sidebar.jsp" id="_sidebar"/>
-	<link rel="import" href="${pageContext.request.contextPath}/resources/partials/_footer.html" id="_footer"/>
+	<link rel="stylesheet" href="<%=path%>/resources/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+	<link rel="stylesheet" href="<%=path%>/resources/vendors/css/vendor.bundle.base.css">
+	<link rel="stylesheet" href="<%=path%>/resources/css/style.css">
+	<link rel="shortcut icon" href="<%=path%>/resources/images/favicon.png"/>
+	<link rel="import" href="<%=path%>/resources/partials/_navbar.jsp" id="_navbar"/>
+	<link rel="import" href="<%=path%>/resources/partials/_sidebar.jsp" id="_sidebar"/>
+	<link rel="import" href="<%=path%>/resources/partials/_footer.html" id="_footer"/>
+	<%--	用于去除链接文字下方的下划线，如果不去除则会破坏按钮整体感 --%>
+	<style type="text/css">
+		a{
+			text-decoration: none;
+		}
+	</style>
 </head>
 <body>
 <div class="container-scroller">
@@ -35,7 +46,7 @@
 					</h3>
 					<nav aria-label="breadcrumb">
 						<ol class="breadcrumb">
-							<li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/index">主页</a></li>
+							<li class="breadcrumb-item"><a href="<%=path%>/index">主页</a></li>
 							<li class="breadcrumb-item active" aria-current="page">住院信息</li>
 						</ol>
 					</nav>
@@ -74,105 +85,51 @@
 										</tr>
 										</thead>
 										<tbody>
-										<tr>
-											<td>
-												<img src="resources/images/faces/face1.jpg" class="mr-2" alt="image">
-												David Grey
-											</td>
-											<td>
-												Fund is not recieved
-											</td>
-											<td>
-												男
-											</td>
-											<td>
-												<label class="badge badge-gradient-success">DONE</label>
-											</td>
-											<td>
-												Dec 5, 2017
-											</td>
-											<td>
-												WD-12345
-											</td>
-											<td>
-												<a href="${pageContext.request.contextPath}/patient/edit">
-													<button type="button" class="btn btn-gradient-success btn-rounded btn-icon" >
-													<i class="mdi mdi-file-find"></i>
+
+										<c:forEach items="${patients}" var="patient" varStatus="stu">
+											<tr>
+												<td>
+													<img src="<%=path%>/resources/images/faces/face${stu.count}.jpg"
+														 class="mr-2" alt="image">
+														${patient.name}
+												</td>
+												<td>
+														${patient.diseaseInformation}
+												</td>
+												<td>
+														${patient.gender}
+												</td>
+												<td>
+													<label class="badge badge-gradient-success">${patient.patientCondition}</label>
+												</td>
+												<td>
+														${patient.admissionDate}
+												</td>
+												<td>
+														${patient.patientID}
+												</td>
+												<td>
+													<a href="<%=path%>/patient/edit?patientID=${patient.patientID}">
+														<button type="button"
+																class="btn btn-gradient-success btn-rounded btn-icon">
+															<i class="mdi mdi-file-find"></i>
+														</button>
+													</a>
+													<a href="<%=path%>/patient/edit?patientID=${patient.patientID}">
+														<button type="button"
+																class="btn btn-gradient-info btn-rounded btn-icon">
+															<i class="mdi mdi-border-color"></i>
+														</button>
+													</a>
+													<a href="<%=path%>/patient/delete?patientID=${patient.patientID}">
+													<button type="button"
+															class="btn btn-gradient-danger btn-rounded btn-icon">
+														<i class="mdi mdi-delete-forever"></i>
 													</button>
-												</a>
-												<a href="${pageContext.request.contextPath}/patient/edit">
-													<button type="button" class="btn btn-gradient-info btn-rounded btn-icon">
-														<i class="mdi mdi-border-color"></i>
-													</button>
-												</a>
-												<button type="button" class="btn btn-gradient-danger btn-rounded btn-icon">
-													<i class="mdi mdi-delete-forever"></i>
-												</button>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<img src="resources/images/faces/face2.jpg" class="mr-2" alt="image">
-												Stella Johnson
-											</td>
-											<td>
-												High loading time
-											</td>
-											<td>
-												<label class="mdi mdi-gender-male badge"></label>
-											</td>
-											<td>
-												<label class="badge badge-gradient-warning">PROGRESS</label>
-											</td>
-											<td>
-												Dec 12, 2017
-											</td>
-											<td>
-												WD-12346
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<img src="resources/images/faces/face3.jpg" class="mr-2" alt="image">
-												Marina Michel
-											</td>
-											<td>
-												Website down for one week
-											</td>
-											<td>
-												<label class="mdi mdi-gender-male badge"></label>
-											</td>
-											<td>
-												<label class="badge badge-gradient-info">ON HOLD</label>
-											</td>
-											<td>
-												Dec 16, 2017
-											</td>
-											<td>
-												WD-12347
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<img src="resources/images/faces/face4.jpg" class="mr-2" alt="image">
-												John Doe
-											</td>
-											<td>
-												Loosing control on server
-											</td>
-											<td>
-												<label class="mdi mdi-gender-male badge"></label>
-											</td>
-											<td>
-												<label class="badge badge-gradient-danger">REJECTED</label>
-											</td>
-											<td>
-												Dec 3, 2017
-											</td>
-											<td>
-												WD-12348
-											</td>
-										</tr>
+													</a>
+												</td>
+											</tr>
+										</c:forEach>
 										</tbody>
 									</table>
 								</div>
@@ -194,17 +151,17 @@
 <!-- container-scroller -->
 
 <!-- plugins:js -->
-<script src="${pageContext.request.contextPath}/resources/vendors/js/vendor.bundle.base.js"></script>
-<script src="${pageContext.request.contextPath}/resources/vendors/js/vendor.bundle.addons.js"></script>
+<script src="<%=path%>/resources/vendors/js/vendor.bundle.base.js"></script>
+<script src="<%=path%>/resources/vendors/js/vendor.bundle.addons.js"></script>
 <!-- endinject -->
 <!-- Plugin js for this page-->
 <!-- End plugin js for this page-->
 <!-- inject:js -->
-<script src="${pageContext.request.contextPath}/resources/js/off-canvas.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/misc.js"></script>
+<script src="<%=path%>/resources/js/off-canvas.js"></script>
+<script src="<%=path%>/resources/js/misc.js"></script>
 <!-- endinject -->
 <!-- Custom js for this page-->
-<script src="${pageContext.request.contextPath}/resources/js/dashboard.js"></script>
+<script src="<%=path%>/resources/js/dashboard.js"></script>
 <!-- End custom js for this page-->
 </body>
 

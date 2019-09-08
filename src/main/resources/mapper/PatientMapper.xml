@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.olocat.nsims.mapper.PatientMapper">
+	<sql id="table">patient</sql>
+	<insert id="addPatient" parameterType="com.olocat.nsims.pojo.Patient">
+		insert into
+		<include refid="table"/>
+		value(
+		#{patientID},
+		#{patientFaceID},
+		#{name},
+		#{gender},
+		#{age},
+		#{carID},
+		#{contentPhoneNumber},
+		#{emergencyContentPhoneNumber},
+		#{admissionDate},
+		#{bloodType},
+		#{patientCondition},
+		#{doctorID},
+		#{department},
+		#{ward},
+		#{bedNumber},
+		#{diseaseInformation}
+		)
+	</insert>
+	<select id="getPatientList" resultType="com.olocat.nsims.pojo.Patient">
+		select * from <include refid="table"/> limit 15
+	</select>
+	<select id="getPatientById" parameterType="String" resultType="com.olocat.nsims.pojo.Patient">
+		select * from <include refid="table"/> where patientID=#{value} limit 1
+	</select>
+	<update id="updatePatient" parameterType="com.olocat.nsims.pojo.Patient">
+		update <include refid="table"/>
+		<set>
+			<if test="patientFaceID != null and patientFaceID != '' ">
+				patientFaceID=#{patientFaceID},
+			</if>
+			<if test="name != null and name != '' ">
+				name=#{name},
+			</if>
+			<if test="gender != null and gender != '' ">
+				gender=#{gender},
+			</if>
+			<if test="age != null and age != '' ">
+				age=#{age},
+			</if>
+			<if test="carID != null and carID != '' ">
+				carID=#{carID},
+			</if>
+			<if test="contentPhoneNumber != null and contentPhoneNumber != '' ">
+				contentPhoneNumber=#{contentPhoneNumber},
+			</if>
+			<if test="emergencyContentPhoneNumber != null and emergencyContentPhoneNumber != '' ">
+				emergencyContentPhoneNumber=#{emergencyContentPhoneNumber},
+			</if>
+			<if test="admissionDate != null and admissionDate != '' ">
+				admissionDate=#{admissionDate},
+			</if>
+			<if test="bloodType != null and bloodType != '' ">
+				bloodType=#{bloodType},
+			</if>
+			<if test="patientCondition != null and patientCondition != '' ">
+				patientCondition=#{patientCondition},
+			</if>
+			<if test="doctorID != null and doctorID != '' ">
+				doctorID=#{doctorID},
+			</if>
+			<if test="department != null and department != '' ">
+				department=#{department},
+			</if>
+			<if test="ward != null and ward != '' ">
+				ward=#{ward},
+			</if>
+			<if test="bedNumber != null and bedNumber != '' ">
+				bedNumber=#{bedNumber},
+			</if>
+			<if test="diseaseInformation != null and diseaseInformation != '' ">
+				diseaseInformation=#{diseaseInformation}
+			</if>
+		</set>
+		where patientID=#{patientID}
+	</update>
+	<delete id="deletePatientById" parameterType="String">
+		delete from <include refid="table"/>
+		<where>
+			patientID=#{value}
+		</where>
+	</delete>
+</mapper>

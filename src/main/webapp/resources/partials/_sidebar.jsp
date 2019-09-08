@@ -3,7 +3,7 @@
 		<li class="nav-item nav-profile">
 			<a href="#" class="nav-link">
 				<div class="nav-profile-image">
-					<img src="/resources/images/faces/face1.jpg" alt="profile">
+					<img src="${pageContext.request.contextPath}/resources/images/faces/face1.jpg" alt="profile">
 					<span class="login-status online"></span> <!--change to offline or busy as needed-->
 				</div>
 				<div class="nav-profile-text d-flex flex-column">
@@ -45,7 +45,8 @@
 		</li>
 		<li class="nav-item sidebar-actions">
             <span class="nav-link">
-              <button class="btn btn-block btn-lg btn-gradient-primary mt-4">办理住院</button>
+              <a href="${pageContext.request.contextPath}/hospitalization" style="text-decoration: none">
+				  <button class="btn btn-block btn-lg btn-gradient-primary mt-4">办理住院</button></a>
             </span>
 		</li>
 	</ul>
