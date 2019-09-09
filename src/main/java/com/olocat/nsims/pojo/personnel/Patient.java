@@ -1,6 +1,4 @@
-package com.olocat.nsims.pojo;
-
-import java.sql.Date;
+package com.olocat.nsims.pojo.personnel;
 
 /**
  * 病人信息类

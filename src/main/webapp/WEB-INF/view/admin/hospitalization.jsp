@@ -54,7 +54,7 @@
 					<div class="card">
 						<div class="card-body">
 							<h4 class="card-title">添写住院信息</h4>
-							<form class="form-sample" action="${pageContext.request.contextPath}/patient/add" method="post">
+							<form class="form-sample" action="${pageContext.request.contextPath}/patient/doAdd" method="post">
 								<p class="card-description">
 									个人信息 :
 								</p>
@@ -77,25 +77,25 @@
 									</div>
 								</div>
 								<div class="row">
-<%--									<div class="col-md-6">--%>
-<%--										<div class="form-group row">--%>
-<%--											<label class="col-sm-3 col-form-label">性别</label>--%>
-<%--											<div class="col-sm-9">--%>
-<%--												<select class="form-control" name="gender">--%>
-<%--													<option value="male">男</option>--%>
-<%--													<option value="female">女</option>--%>
-<%--												</select>--%>
-<%--											</div>--%>
-<%--										</div>--%>
-<%--									</div>--%>
 									<div class="col-md-6">
 										<div class="form-group row">
 											<label class="col-sm-3 col-form-label">性别</label>
 											<div class="col-sm-9">
-												<input class="form-control" name="gender"/>
+												<select class="form-control" name="gender">
+													<option value="男">男</option>
+													<option value="女">女</option>
+												</select>
 											</div>
 										</div>
 									</div>
+<%--									<div class="col-md-6">--%>
+<%--										<div class="form-group row">--%>
+<%--											<label class="col-sm-3 col-form-label">性别</label>--%>
+<%--											<div class="col-sm-9">--%>
+<%--												<input class="form-control" name="gender"/>--%>
+<%--											</div>--%>
+<%--										</div>--%>
+<%--									</div>--%>
 									<div class="col-md-6">
 										<div class="form-group row">
 											<label class="col-sm-3 col-form-label">年龄</label>
@@ -145,28 +145,28 @@
 									医疗信息 :
 								</p>
 								<div class="row">
-<%--									<div class="col-md-6">--%>
-<%--										<div class="form-group row">--%>
-<%--											<label class="col-sm-3 col-form-label">血型</label>--%>
-<%--											<div class="col-sm-9">--%>
-<%--												<select class="form-control" name="bloodType">--%>
-<%--													<option value="A">A</option>--%>
-<%--													<option value="B">B</option>--%>
-<%--													<option value="0">O</option>--%>
-<%--													<option value="AB">AB</option>--%>
-<%--													<option value="special">特殊</option>--%>
-<%--												</select>--%>
-<%--											</div>--%>
-<%--										</div>--%>
-<%--									</div>--%>
 									<div class="col-md-6">
 										<div class="form-group row">
 											<label class="col-sm-3 col-form-label">血型</label>
 											<div class="col-sm-9">
-												<input class="form-control" name="bloodType"/>
+												<select class="form-control" name="bloodType">
+													<option value="A">A</option>
+													<option value="B">B</option>
+													<option value="0">O</option>
+													<option value="AB">AB</option>
+													<option value="特殊">特殊</option>
+												</select>
 											</div>
 										</div>
 									</div>
+<%--									<div class="col-md-6">--%>
+<%--										<div class="form-group row">--%>
+<%--											<label class="col-sm-3 col-form-label">血型</label>--%>
+<%--											<div class="col-sm-9">--%>
+<%--												<input class="form-control" name="bloodType"/>--%>
+<%--											</div>--%>
+<%--										</div>--%>
+<%--									</div>--%>
 									<div class="col-md-6">
 										<div class="form-group row">
 											<label class="col-sm-3 col-form-label">病况</label>

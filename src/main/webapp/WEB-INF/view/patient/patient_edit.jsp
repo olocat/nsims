@@ -48,7 +48,7 @@
 					<div class="card">
 						<div class="card-body">
 							<h4 class="card-title">修改病人信息</h4>
-							<form class="form-sample" action="${pageContext.request.contextPath}/patient/edit.do" method="post">
+							<form class="form-sample" action="${pageContext.request.contextPath}/patient/doEdit" method="post">
 								<p class="card-description">
 									个人信息 :
 								</p>

@@ -108,19 +108,19 @@
 														${patient.patientID}
 												</td>
 												<td>
-													<a href="<%=path%>/patient/edit?patientID=${patient.patientID}">
+													<a href="<%=path%>/patient/toEdit?patientID=${patient.patientID}">
 														<button type="button"
 																class="btn btn-gradient-success btn-rounded btn-icon">
 															<i class="mdi mdi-file-find"></i>
 														</button>
 													</a>
-													<a href="<%=path%>/patient/edit?patientID=${patient.patientID}">
+													<a href="<%=path%>/patient/toEdit?patientID=${patient.patientID}">
 														<button type="button"
 																class="btn btn-gradient-info btn-rounded btn-icon">
 															<i class="mdi mdi-border-color"></i>
 														</button>
 													</a>
-													<a href="<%=path%>/patient/delete?patientID=${patient.patientID}">
+													<a href="<%=path%>/patient/doDelete?patientID=${patient.patientID}">
 													<button type="button"
 															class="btn btn-gradient-danger btn-rounded btn-icon">
 														<i class="mdi mdi-delete-forever"></i>

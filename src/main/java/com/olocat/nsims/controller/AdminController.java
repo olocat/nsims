@@ -1,6 +1,8 @@
 package com.olocat.nsims.controller;
 
-import com.olocat.nsims.pojo.Patient;
+import com.olocat.nsims.pojo.personnel.Nurse;
+import com.olocat.nsims.pojo.personnel.Patient;
+import com.olocat.nsims.service.NurseService;
 import com.olocat.nsims.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +23,8 @@ public class AdminController {
 
 	@Autowired(required = false)
 	private PatientService patientService;
+	@Autowired(required = false)
+	private NurseService nurseService;
 
 	/**
 	 * 主页
@@ -48,7 +52,9 @@ public class AdminController {
 	 * @return 护士信息页面所在路径
 	 */
 	@RequestMapping("/nurse_info")
-	public String nurseInfo(){
+	public String nurseInfo(Model model){
+		List<Nurse> nurses = nurseService.getNurseList();
+		model.addAttribute("nurses",nurses);
 		return "admin/nurse_info";
 	}
 

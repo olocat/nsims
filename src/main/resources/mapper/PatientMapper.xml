@@ -5,7 +5,7 @@
 	<!--表名-->
 	<sql id="table">patient</sql>
 	
-	<insert id="addPatient" parameterType="com.olocat.nsims.pojo.Patient">
+	<insert id="addPatient" parameterType="com.olocat.nsims.pojo.personnel.Patient">
 		insert into
 		<include refid="table"/>
 		value(
@@ -28,15 +28,15 @@
 		)
 	</insert>
 	
-	<select id="getPatientList" resultType="com.olocat.nsims.pojo.Patient">
+	<select id="getPatientList" resultType="com.olocat.nsims.pojo.personnel.Patient">
 		select * from <include refid="table"/> limit 15
 	</select>
 	
-	<select id="getPatientById" parameterType="String" resultType="com.olocat.nsims.pojo.Patient">
+	<select id="getPatientById" parameterType="String" resultType="com.olocat.nsims.pojo.personnel.Patient">
 		select * from <include refid="table"/> where patientID=#{value} limit 1
 	</select>
 	
-	<update id="updatePatient" parameterType="com.olocat.nsims.pojo.Patient">
+	<update id="updatePatient" parameterType="com.olocat.nsims.pojo.personnel.Patient">
 		update <include refid="table"/>
 		<set>
 			<if test="patientFaceID != null and patientFaceID != '' ">

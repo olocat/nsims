@@ -1,6 +1,6 @@
 package com.olocat.nsims.controller;
 
-import com.olocat.nsims.pojo.Patient;
+import com.olocat.nsims.pojo.personnel.Patient;
 import com.olocat.nsims.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,12 +23,12 @@ public class PatientController {
 	private PatientService patientService;
 
 	/**
-	 * 添加病人，办理住院按钮所使用
+	 * 执行添加病人信息
 	 * @param patient 所要添加的病人信息
 	 * @param model Model
-	 * @return 添加完成后返回主页
+	 * @return 添加完成后返回 主页
 	 */
-	@RequestMapping("/add")
+	@RequestMapping("/doAdd")
 	public String add(Patient patient, Model model){
 		System.out.println(patient);
 		System.out.println(patient.getPatientID());
@@ -45,12 +45,21 @@ public class PatientController {
 	}
 
 	/**
-	 * 进入修改病人信息页面，住院信息内的修改按钮使用
+	 * 获取添加病人信息页面
+	 * @return 返回添加病人信息页面路径
+	 */
+	@RequestMapping("/toAdd")
+	public String toAdd(){
+		return "admin/hospitalization";
+	}
+
+	/**
+	 * 获取修改病人信息页面
 	 * @param patientID 被修改用户的 ID
 	 * @param model Model
 	 * @return 修改病人信息页面所在路径
 	 */
-	@RequestMapping("/edit")
+	@RequestMapping("/toEdit")
 	public String edit(@RequestParam(value = "patientID") String patientID, Model model){
 		Patient patient = patientService.getPatientById(patientID);
 		model.addAttribute("patient",patient);
@@ -58,22 +67,22 @@ public class PatientController {
 	}
 
 	/**
-	 * 执行对病人信息的修改，修改病人信息页面提交按钮使用
+	 * 执行对病人信息的修改
 	 * @param patient 所要修改的病人
-	 * @return 修改完成后返回住院信息页面
+	 * @return 修改完成后返回 住院信息页面
 	 */
-	@RequestMapping("/edit.do")
+	@RequestMapping("/doEdit")
 	public String editDo(Patient patient){
 		patientService.updatePatient(patient);
 		return "redirect:/patient_info";
 	}
 
 	/**
-	 * 删除病人信息，住院信息页面删除按钮使用
+	 * 执行删除病人信息
 	 * @param patientID 被删除病人的 ID
-	 * @return 删除完成后返回住院信息页面
+	 * @return 删除完成后返回 住院信息页面
 	 */
-	@RequestMapping("/delete")
+	@RequestMapping("/doDelete")
 	public String delete(@RequestParam(value = "patientID") String patientID){
 		patientService.deletePatientById(patientID);
 		return "redirect:/patient_info";

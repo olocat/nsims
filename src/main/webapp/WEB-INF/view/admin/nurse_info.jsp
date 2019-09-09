@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="cn">
@@ -75,80 +76,39 @@
 										</tr>
 										</thead>
 										<tbody>
+										<c:forEach items="${nurses}" var="nurse" varStatus="stu">
 										<tr>
 											<td>
-												<img src="${pageContext.request.contextPath}/resources/images/faces/face15.jpg" class="mr-2" alt="image">
-												Grey
+												<img src="${pageContext.request.contextPath}/resources/images/faces/face1${stu.count}.jpg" class="mr-2" alt="image">
+												${nurse.name}
 											</td>
 											<td>
-												1201
+												${nurse.responsibleWard}
 											</td>
 											<td>
 												<label class="badge badge-gradient-success">外科</label>
 											</td>
 											<td>
-												ns120001
+												${nurse.nurseID}
 											</td>
 											<td>
-												<button type="button"
-														class="btn btn-gradient-success btn-rounded btn-icon">
+												<a href="${pageContext.request.contextPath}/nurse/toEdit?nurseID=${nurse.nurseID}">
+													<button type="button" class="btn btn-gradient-success btn-rounded btn-icon">
 													<i class="mdi mdi-file-find"></i>
-												</button>
-												<button type="button"
+												</button></a>
+												<a href="${pageContext.request.contextPath}/nurse/toEdit?nurseID=${nurse.nurseID}">
+													<button type="button"
 														class="btn btn-gradient-info btn-rounded btn-icon">
 													<i class="mdi mdi-border-color"></i>
-												</button>
-												<button type="button"
+												</button></a>
+												<a href="${pageContext.request.contextPath}/nurse/doDelete?nurseID=${nurse.nurseID}">
+													<button type="button"
 														class="btn btn-gradient-danger btn-rounded btn-icon">
 													<i class="mdi mdi-delete-forever"></i>
-												</button>
+													</button></a>
 											</td>
 										</tr>
-										<tr>
-											<td>
-												<img src="${pageContext.request.contextPath}/resources/images/faces/face12.jpg" class="mr-2" alt="image">
-												Stella
-											</td>
-											<td>
-												1102
-											</td>
-											<td>
-												<label class="badge badge-gradient-warning">内科</label>
-											</td>
-											<td>
-												ns110001
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<img src="${pageContext.request.contextPath}/resources/images/faces/face13.jpg" class="mr-2" alt="image">
-												Marina
-											</td>
-											<td>
-												1001
-											</td>
-											<td>
-												<label class="badge badge-gradient-info">儿科</label>
-											</td>
-											<td>
-												ns100001
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<img src="${pageContext.request.contextPath}/resources/images/faces/face14.jpg" class="mr-2" alt="image">
-												John
-											</td>
-											<td>
-												903
-											</td>
-											<td>
-												<label class="badge badge-gradient-danger">骨科</label>
-											</td>
-											<td>
-												ns090002
-											</td>
-										</tr>
+										</c:forEach>
 										</tbody>
 									</table>
 								</div>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.olocat.nsims.mapper.NurseMapper">
+	<sql id="table">nurse</sql>
+	<select id="getNurseList" resultType="com.olocat.nsims.pojo.personnel.Nurse">
+		select * from <include refid="table"/> limit 15
+	</select>
+	<select id="getNurseByID" parameterType="String" resultType="com.olocat.nsims.pojo.personnel.Nurse">
+		select * from <include refid="table"/>
+		<where>
+			nurseID=#{value}
+		</where>
+		limit 1
+	</select>
+	<update id="updateNurse" parameterType="com.olocat.nsims.pojo.personnel.Nurse">
+		update <include refid="table"/>
+		<set>
+			<if test="name != null and name != '' ">
+				name=#{name},
+			</if>
+			<if test="gender != null and gender != '' ">
+				gender=#{gender},
+			</if>
+			<if test="age != null and age != '' ">
+				age=#{age},
+			</if>
+			<if test="phoneNumber != null and phoneNumber != '' ">
+				phoneNumber=#{phoneNumber},
+			</if>
+			<if test="department != null and department != '' ">
+				department=#{department},
+			</if>
+			<if test="responsibleWard != null and responsibleWard != '' ">
+				responsibleWard=#{responsibleWard},
+			</if>
+			<if test="position != null and position != ''">
+				position=#{position}
+			</if>
+		</set>
+		where nurseID=#{nurseID}
+	</update>
+	<insert id="addNurse" parameterType="com.olocat.nsims.pojo.personnel.Nurse">
+		insert into
+		<include refid="table"/>
+		value(
+		#{nurseID},
+		#{name},
+		#{gender},
+		#{age},
+		#{phoneNumber},
+		#{responsibleWard},
+		#{position},
+		#{department}
+		)
+	</insert>
+	<delete id="deleteNurseByID" parameterType="String">
+		delete from <include refid="table"/>
+		<where>
+			nurseID=#{value}
+		</where>
+	</delete>
+</mapper>

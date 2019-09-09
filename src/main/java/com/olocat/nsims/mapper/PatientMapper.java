@@ -1,6 +1,6 @@
 package com.olocat.nsims.mapper;
 
-import com.olocat.nsims.pojo.Patient;
+import com.olocat.nsims.pojo.personnel.Patient;
 
 import java.util.List;
 
