@@ -32,7 +32,7 @@
 					  <span class="page-title-icon bg-gradient-primary text-white mr-2">
 						<i class="mdi mdi-table-edit"></i>
 					  </span>
-						修改护士信息
+						添加护士信息
 					</h3>
 					<nav aria-label="breadcrumb">
 						<ol class="breadcrumb">
