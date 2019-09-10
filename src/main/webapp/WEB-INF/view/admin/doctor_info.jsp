@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="cn">
 <%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="java.util.*" %>
@@ -75,80 +76,40 @@
 										</tr>
 										</thead>
 										<tbody>
-										<tr>
-											<td>
-												<img src="${pageContext.request.contextPath}/resources/images/faces/face21.jpg" class="mr-2" alt="image">
-												Bavarian
-											</td>
-											<td>
-												<label class="badge badge-gradient-primary">主任</label>
-											</td>
-											<td>
-												<label class="badge badge-gradient-success">外科</label>
-											</td>
-											<td>
-												dc120001
-											</td>
-											<td>
-												<button type="button"
-														class="btn btn-gradient-success btn-rounded btn-icon">
-													<i class="mdi mdi-file-find"></i>
-												</button>
-												<button type="button"
-														class="btn btn-gradient-info btn-rounded btn-icon">
-													<i class="mdi mdi-border-color"></i>
-												</button>
-												<button type="button"
-														class="btn btn-gradient-danger btn-rounded btn-icon">
-													<i class="mdi mdi-delete-forever"></i>
-												</button>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<img src="${pageContext.request.contextPath}/resources/images/faces/face22.jpg" class="mr-2" alt="image">
-												Mdivo
-											</td>
-											<td>
-												<label class="badge badge-gradient-primary">主任</label>
-											</td>
-											<td>
-												<label class="badge badge-gradient-warning">内科</label>
-											</td>
-											<td>
-												dc110001
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<img src="${pageContext.request.contextPath}/resources/images/faces/face23.jpg" class="mr-2" alt="image">
-												Venis
-											</td>
-											<td>
-												<label class="badge badge-gradient-primary">主任</label>
-											</td>
-											<td>
-												<label class="badge badge-gradient-info">儿科</label>
-											</td>
-											<td>
-												dc100001
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<img src="${pageContext.request.contextPath}/resources/images/faces/face24.jpg" class="mr-2" alt="image">
-												Johnson
-											</td>
-											<td>
-												<label class="badge badge-gradient-primary">主任</label>
-											</td>
-											<td>
-												<label class="badge badge-gradient-danger">骨科</label>
-											</td>
-											<td>
-												dc090002
-											</td>
-										</tr>
+										<c:forEach items="${doctors}" var="doctor" varStatus="stu">
+											<tr>
+												<td>
+													<img src="${pageContext.request.contextPath}/resources/images/faces/face2${stu.count}.jpg" class="mr-2" alt="image">
+													${doctor.name}
+												</td>
+												<td>
+													<label class="badge badge-gradient-primary">${doctor.position}</label>
+												</td>
+												<td>
+													<label class="badge badge-gradient-success">${doctor.department}</label>
+												</td>
+												<td>
+													${doctor.doctorID}
+												</td>
+												<td>
+													<a href="${pageContext.request.contextPath}/doctor/toEdit?doctorID=${doctor.doctorID}">
+													<button type="button"
+															class="btn btn-gradient-success btn-rounded btn-icon">
+														<i class="mdi mdi-file-find"></i>
+													</button></a>
+													<a href="${pageContext.request.contextPath}/doctor/toEdit?doctorID=${doctor.doctorID}">
+													<button type="button"
+															class="btn btn-gradient-info btn-rounded btn-icon">
+														<i class="mdi mdi-border-color"></i>
+													</button></a>
+													<a href="${pageContext.request.contextPath}/doctor/doDelete?doctorID=${doctor.doctorID}">
+													<button type="button"
+															class="btn btn-gradient-danger btn-rounded btn-icon">
+														<i class="mdi mdi-delete-forever"></i>
+													</button></a>
+												</td>
+											</tr>
+										</c:forEach>
 										</tbody>
 									</table>
 								</div>

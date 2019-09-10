@@ -38,22 +38,22 @@
 			</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="${pageContext.request.contextPath}/doctor_info">
+			<a class="nav-link" href="${pageContext.request.contextPath}/doctor">
 				<span class="menu-title">医生信息</span>
 				<i class="mdi mdi-stethoscope menu-icon"></i>
 			</a>
 		</li>
 		<li class="nav-item sidebar-actions">
-            <span class="nav-link">
               <a href="${pageContext.request.contextPath}/hospitalization" style="text-decoration: none">
 				  <button class="btn btn-block btn-lg btn-gradient-primary mt-4">办理住院</button></a>
-            </span>
 		</li>
 		<li class="nav-item sidebar-actions">
-            <span class="nav-link">
               <a href="${pageContext.request.contextPath}/nurse/toAdd" style="text-decoration: none">
 				  <button class="btn btn-block btn-lg btn-gradient-primary mt-4">添加护士</button></a>
-            </span>
+		</li>
+		<li class="nav-item sidebar-actions">
+              <a href="${pageContext.request.contextPath}/doctor/toAdd" style="text-decoration: none">
+				  <button class="btn btn-block btn-lg btn-gradient-primary mt-4">添加医生</button></a>
 		</li>
 	</ul>
 </nav>

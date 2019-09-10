@@ -1,7 +1,9 @@
 package com.olocat.nsims.controller;
 
+import com.olocat.nsims.pojo.personnel.Doctor;
 import com.olocat.nsims.pojo.personnel.Nurse;
 import com.olocat.nsims.pojo.personnel.Patient;
+import com.olocat.nsims.service.DoctorService;
 import com.olocat.nsims.service.NurseService;
 import com.olocat.nsims.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +27,8 @@ public class AdminController {
 	private PatientService patientService;
 	@Autowired(required = false)
 	private NurseService nurseService;
-
+	@Autowired(required = false)
+	private DoctorService doctorService;
 	/**
 	 * 主页
 	 * @return 主页路径
@@ -62,8 +65,10 @@ public class AdminController {
 	 * 医生信息页面
 	 * @return 医生信息页面所在路径
 	 */
-	@RequestMapping("/doctor_info")
-	public String doctorInfo(){
+	@RequestMapping("/doctor")
+	public String doctorInfo(Model model){
+		List<Doctor> doctors = doctorService.getDoctorList();
+		model.addAttribute("doctors",doctors);
 		return "admin/doctor_info";
 	}
 
