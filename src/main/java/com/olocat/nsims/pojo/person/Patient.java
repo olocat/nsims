@@ -1,11 +1,11 @@
-package com.olocat.nsims.pojo.personnel;
+package com.olocat.nsims.pojo.person;
 
 /**
  * 病人信息类
  * @author olocat
  * @date 2019/9/8
- * @table patient
- * @version 0.1.2
+ * @table ps_patient
+ * @version 0.1.3
  */
 public class Patient {
 	private String patientID;	//用户id

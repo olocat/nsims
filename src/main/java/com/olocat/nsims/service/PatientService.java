@@ -1,6 +1,6 @@
 package com.olocat.nsims.service;
 
-import com.olocat.nsims.pojo.personnel.Patient;
+import com.olocat.nsims.pojo.person.Patient;
 
 import java.util.List;
 

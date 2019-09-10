@@ -1,9 +1,15 @@
 package com.olocat.nsims.mapper;
 
-import com.olocat.nsims.pojo.personnel.Doctor;
+import com.olocat.nsims.pojo.person.Doctor;
 
 import java.util.List;
 
+/**
+ * 医生 Mapper 接口
+ * @author olocat
+ * @date 2019/9/10
+ * @version 0.1.0
+ */
 public interface DoctorMapper {
 
 	/**

@@ -88,14 +88,14 @@
 											</div>
 										</div>
 									</div>
-									<%--									<div class="col-md-6">--%>
-									<%--										<div class="form-group row">--%>
-									<%--											<label class="col-sm-3 col-form-label">性别</label>--%>
-									<%--											<div class="col-sm-9">--%>
-									<%--												<input class="form-control" name="gender"/>--%>
-									<%--											</div>--%>
-									<%--										</div>--%>
-									<%--									</div>--%>
+<%--									<div class="col-md-6">--%>
+<%--										<div class="form-group row">--%>
+<%--											<label class="col-sm-3 col-form-label">性别</label>--%>
+<%--											<div class="col-sm-9">--%>
+<%--												<input class="form-control" name="gender"/>--%>
+<%--											</div>--%>
+<%--										</div>--%>
+<%--									</div>--%>
 									<div class="col-md-6">
 										<div class="form-group row">
 											<label class="col-sm-3 col-form-label">年龄</label>
@@ -159,14 +159,14 @@
 											</div>
 										</div>
 									</div>
-									<%--									<div class="col-md-6">--%>
-									<%--										<div class="form-group row">--%>
-									<%--											<label class="col-sm-3 col-form-label">血型</label>--%>
-									<%--											<div class="col-sm-9">--%>
-									<%--												<input class="form-control" name="bloodType"/>--%>
-									<%--											</div>--%>
-									<%--										</div>--%>
-									<%--									</div>--%>
+<%--									<div class="col-md-6">--%>
+<%--										<div class="form-group row">--%>
+<%--											<label class="col-sm-3 col-form-label">血型</label>--%>
+<%--											<div class="col-sm-9">--%>
+<%--												<input class="form-control" name="bloodType"/>--%>
+<%--											</div>--%>
+<%--										</div>--%>
+<%--									</div>--%>
 									<div class="col-md-6">
 										<div class="form-group row">
 											<label class="col-sm-3 col-form-label">病况</label>
@@ -211,21 +211,21 @@
 											</div>
 										</div>
 									</div>
-									<%--									<div class="col-md-6">--%>
-									<%--										<div class="form-group row">--%>
-									<%--											<label class="col-sm-3 col-form-label">床位</label>--%>
-									<%--											<div class="col-sm-9">--%>
-									<%--												<select class="form-control" name="bedNumber">--%>
-									<%--													<option value="01">01</option>--%>
-									<%--													<option value="02">02</option>--%>
-									<%--													<option value="03">03</option>--%>
-									<%--													<option value="04">04</option>--%>
-									<%--													<option value="05">05</option>--%>
-									<%--													<option value="06">06</option>--%>
-									<%--												</select>--%>
-									<%--											</div>--%>
-									<%--										</div>--%>
-									<%--									</div>--%>
+<%--									<div class="col-md-6">--%>
+<%--										<div class="form-group row">--%>
+<%--											<label class="col-sm-3 col-form-label">床位</label>--%>
+<%--											<div class="col-sm-9">--%>
+<%--												<select class="form-control" name="bedNumber">--%>
+<%--													<option value="01">01</option>--%>
+<%--													<option value="02">02</option>--%>
+<%--													<option value="03">03</option>--%>
+<%--													<option value="04">04</option>--%>
+<%--													<option value="05">05</option>--%>
+<%--													<option value="06">06</option>--%>
+<%--												</select>--%>
+<%--											</div>--%>
+<%--										</div>--%>
+<%--									</div>--%>
 								</div>
 								<div class="row">
 									<label class="col-sm-9 col-form-label">病情信息</label>

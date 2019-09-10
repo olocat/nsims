@@ -3,9 +3,9 @@
 		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.olocat.nsims.mapper.PatientMapper">
 	<!--表名-->
-	<sql id="table">patient</sql>
+	<sql id="table">ps_patient</sql>
 	
-	<insert id="addPatient" parameterType="com.olocat.nsims.pojo.personnel.Patient">
+	<insert id="addPatient" parameterType="com.olocat.nsims.pojo.person.Patient">
 		insert into
 		<include refid="table"/>
 		value(
@@ -28,15 +28,15 @@
 		)
 	</insert>
 	
-	<select id="getPatientList" resultType="com.olocat.nsims.pojo.personnel.Patient">
+	<select id="getPatientList" resultType="com.olocat.nsims.pojo.person.Patient">
 		select * from <include refid="table"/> limit 15
 	</select>
 	
-	<select id="getPatientById" parameterType="String" resultType="com.olocat.nsims.pojo.personnel.Patient">
+	<select id="getPatientById" parameterType="String" resultType="com.olocat.nsims.pojo.person.Patient">
 		select * from <include refid="table"/> where patientID=#{value} limit 1
 	</select>
 	
-	<update id="updatePatient" parameterType="com.olocat.nsims.pojo.personnel.Patient">
+	<update id="updatePatient" parameterType="com.olocat.nsims.pojo.person.Patient">
 		update <include refid="table"/>
 		<set>
 			<if test="patientFaceID != null and patientFaceID != '' ">

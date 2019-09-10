@@ -1,12 +1,19 @@
 package com.olocat.nsims.service.impl;
 
 import com.olocat.nsims.mapper.DoctorMapper;
-import com.olocat.nsims.pojo.personnel.Doctor;
+import com.olocat.nsims.pojo.person.Doctor;
 import com.olocat.nsims.service.DoctorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
+/**
+ * 医生服务层实体类
+ * @author olocat
+ * @date 2019/9/10
+ * @version 0.1.0
+ */
 @Service
 public class DoctorServiceImpl implements DoctorService {
 

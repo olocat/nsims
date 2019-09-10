@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="cn">
 <%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="java.util.*"%>
@@ -37,7 +38,7 @@
 					<nav aria-label="breadcrumb">
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item">
-								<a href="${pageContext.request.contextPath}/patient_info">医生信息</a>
+								<a href="${pageContext.request.contextPath}/doctor">医生信息</a>
 							</li>
 							<li class="breadcrumb-item active" aria-current="page">添加医生信息</li>
 						</ol>
@@ -75,7 +76,10 @@
 										<div class="form-group row">
 											<label class="col-sm-3 col-form-label">性别</label>
 											<div class="col-sm-9">
-												<input class="form-control" name="gender" value="${doctor.gender}"/>
+												<select class="form-control" name="gender">
+													<option value="男">男</option>
+													<option value="女">女</option>
+												</select>
 											</div>
 										</div>
 									</div>
@@ -101,7 +105,11 @@
 										<div class="form-group row">
 											<label class="col-sm-3 col-form-label">科室</label>
 											<div class="col-sm-9">
-												<input class="form-control" name="department" value="${doctor.department}"/>
+											<select class="form-control" name="departmentID">
+												<c:forEach items="${departments}" var="department" varStatus="stu">
+												<option value="${department.departmentID}">${department.name}</option>
+												</c:forEach>
+											</select>
 											</div>
 										</div>
 									</div>
@@ -112,7 +120,11 @@
 										<div class="form-group row">
 											<label class="col-sm-3 col-form-label">职位</label>
 											<div class="col-sm-9">
-												<input type="text" class="form-control" name="position" value="${doctor.position}"/>
+												<select class="form-control" name="level">
+													<c:forEach items="${level}" var="level">
+														<option value="${level.level}"> ${level.name} </option>
+													</c:forEach>
+												</select>
 											</div>
 										</div>
 									</div>
@@ -136,7 +148,7 @@
 									</div>
 									<div class="col-md-4">
 										<div class="form-group row">
-											<a href="${pageContext.request.contextPath}/doctor_info">
+											<a href="${pageContext.request.contextPath}/doctor">
 												<button type="button" class="btn btn-gradient-danger btn-icon-text">
 													<i class="mdi mdi-upload btn-icon-prepend"></i>
 													返回

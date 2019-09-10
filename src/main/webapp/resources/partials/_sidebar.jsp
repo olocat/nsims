@@ -20,19 +20,19 @@
 			</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="${pageContext.request.contextPath}/patient_info">
+			<a class="nav-link" href="${pageContext.request.contextPath}/patient">
 				<span class="menu-title">住院信息</span>
 				<i class="mdi mdi-thermometer-lines menu-icon"></i>
 			</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="${pageContext.request.contextPath}/nurse_info">
+			<a class="nav-link" href="${pageContext.request.contextPath}/nurse">
 				<span class="menu-title">护士信息</span>
 				<i class="mdi mdi-needle menu-icon"></i>
 			</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="${pageContext.request.contextPath}/ward_info">
+			<a class="nav-link" href="${pageContext.request.contextPath}/ward">
 				<span class="menu-title">病房管理</span>
 				<i class="mdi mdi-clipboard-outline menu-icon"></i>
 			</a>
@@ -44,7 +44,7 @@
 			</a>
 		</li>
 		<li class="nav-item sidebar-actions">
-              <a href="${pageContext.request.contextPath}/hospitalization" style="text-decoration: none">
+              <a href="${pageContext.request.contextPath}/patient/toAdd" style="text-decoration: none">
 				  <button class="btn btn-block btn-lg btn-gradient-primary mt-4">办理住院</button></a>
 		</li>
 		<li class="nav-item sidebar-actions">

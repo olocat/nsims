@@ -1,6 +1,6 @@
 package com.olocat.nsims.controller;
 
-import com.olocat.nsims.pojo.personnel.Patient;
+import com.olocat.nsims.pojo.person.Patient;
 import com.olocat.nsims.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -50,7 +50,7 @@ public class PatientController {
 	 */
 	@RequestMapping("/toAdd")
 	public String toAdd(){
-		return "admin/hospitalization";
+		return "patient/patient_add";
 	}
 
 	/**

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="cn">
 <%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="java.util.*"%>
@@ -72,132 +73,155 @@
 										</tr>
 										</thead>
 										<tbody>
-										<tr>
-											<td>
-												1201
-											</td>
-											<td>
-												<label class="badge badge-gradient-success">外科</label>
-											</td>
-											<td>
-												Maives
-											</td>
-											<td>
-												1/4
-											</td>
-											<td>
-												<div class="progress">
-													<div class="progress-bar bg-gradient-success" role="progressbar"
-														 style="width: 25%" aria-valuenow="25" aria-valuemin="0"
-														 aria-valuemax="100"></div>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												1202
-											</td>
-											<td>
-												<label class="badge badge-gradient-success">外科</label>
-											</td>
-											<td>
-												Juler
-											</td>
-											<td>
-												2/6
-											</td>
-											<td>
-												<div class="progress">
-													<div class="progress-bar bg-gradient-danger" role="progressbar"
-														 style="width: 33%" aria-valuenow="33" aria-valuemin="0"
-														 aria-valuemax="100"></div>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												1101
-											</td>
-											<td>
-												<label class="badge badge-gradient-warning">内科</label>
-											</td>
-											<td>
-												Aprev
-											</td>
-											<td>
-												3/6
-											</td>
-											<td>
-												<div class="progress">
-													<div class="progress-bar bg-gradient-warning" role="progressbar"
-														 style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-														 aria-valuemax="100"></div>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												1102
-											</td>
-											<td>
-												<label class="badge badge-gradient-warning">内科</label>
-											</td>
-											<td>
-												Matha
-											</td>
-											<td>
-												6/6
-											</td>
-											<td>
-												<div class="progress">
-													<div class="progress-bar bg-gradient-primary" role="progressbar"
-														 style="width: 100%" aria-valuenow="100" aria-valuemin="0"
-														 aria-valuemax="100"></div>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												1001
-											</td>
-											<td>
-												<label class="badge badge-gradient-info">儿科</label>
-											</td>
-											<td>
-												Obeve
-											</td>
-											<td>
-												4/6
-											</td>
-											<td>
-												<div class="progress">
-													<div class="progress-bar bg-gradient-danger" role="progressbar"
-														 style="width: 66%" aria-valuenow="66" aria-valuemin="0"
-														 aria-valuemax="100"></div>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												1002
-											</td>
-											<td>
-												<label class="badge badge-gradient-info">儿科</label>
-											</td>
-											<td>
-												Jun
-											</td>
-											<td>
-												3/4
-											</td>
-											<td>
-												<div class="progress">
-													<div class="progress-bar bg-gradient-info" role="progressbar"
-														 style="width: 75%" aria-valuenow="75" aria-valuemin="0"
-														 aria-valuemax="100"></div>
-												</div>
-											</td>
-										</tr>
+										<c:forEach items="${wards}" var="ward" varStatus="stu">
+											<tr>
+												<td>
+													${ward.number}
+												</td>
+												<td>
+													<label class="badge badge-gradient-success">${ward.department}</label>
+												</td>
+												<td>
+													${ward.doctorID}
+												</td>
+												<td>
+													1/${ward.berths}
+												</td>
+												<td>
+													<div class="progress">
+														<div class="progress-bar bg-gradient-success" role="progressbar"
+															 style="width: 25%" aria-valuenow="25" aria-valuemin="0"
+															 aria-valuemax="100"></div>
+													</div>
+												</td>
+											</tr>
+										</c:forEach>
+<%--										<tr>--%>
+<%--											<td>--%>
+<%--												1201--%>
+<%--											</td>--%>
+<%--											<td>--%>
+<%--												<label class="badge badge-gradient-success">外科</label>--%>
+<%--											</td>--%>
+<%--											<td>--%>
+<%--												Maives--%>
+<%--											</td>--%>
+<%--											<td>--%>
+<%--												1/4--%>
+<%--											</td>--%>
+<%--											<td>--%>
+<%--												<div class="progress">--%>
+<%--													<div class="progress-bar bg-gradient-success" role="progressbar"--%>
+<%--														 style="width: 25%" aria-valuenow="25" aria-valuemin="0"--%>
+<%--														 aria-valuemax="100"></div>--%>
+<%--												</div>--%>
+<%--											</td>--%>
+<%--										</tr>--%>
+<%--										<tr>--%>
+<%--											<td>--%>
+<%--												1202--%>
+<%--											</td>--%>
+<%--											<td>--%>
+<%--												<label class="badge badge-gradient-success">外科</label>--%>
+<%--											</td>--%>
+<%--											<td>--%>
+<%--												Juler--%>
+<%--											</td>--%>
+<%--											<td>--%>
+<%--												2/6--%>
+<%--											</td>--%>
+<%--											<td>--%>
+<%--												<div class="progress">--%>
+<%--													<div class="progress-bar bg-gradient-danger" role="progressbar"--%>
+<%--														 style="width: 33%" aria-valuenow="33" aria-valuemin="0"--%>
+<%--														 aria-valuemax="100"></div>--%>
+<%--												</div>--%>
+<%--											</td>--%>
+<%--										</tr>--%>
+<%--										<tr>--%>
+<%--											<td>--%>
+<%--												1101--%>
+<%--											</td>--%>
+<%--											<td>--%>
+<%--												<label class="badge badge-gradient-warning">内科</label>--%>
+<%--											</td>--%>
+<%--											<td>--%>
+<%--												Aprev--%>
+<%--											</td>--%>
+<%--											<td>--%>
+<%--												3/6--%>
+<%--											</td>--%>
+<%--											<td>--%>
+<%--												<div class="progress">--%>
+<%--													<div class="progress-bar bg-gradient-warning" role="progressbar"--%>
+<%--														 style="width: 50%" aria-valuenow="50" aria-valuemin="0"--%>
+<%--														 aria-valuemax="100"></div>--%>
+<%--												</div>--%>
+<%--											</td>--%>
+<%--										</tr>--%>
+<%--										<tr>--%>
+<%--											<td>--%>
+<%--												1102--%>
+<%--											</td>--%>
+<%--											<td>--%>
+<%--												<label class="badge badge-gradient-warning">内科</label>--%>
+<%--											</td>--%>
+<%--											<td>--%>
+<%--												Matha--%>
+<%--											</td>--%>
+<%--											<td>--%>
+<%--												6/6--%>
+<%--											</td>--%>
+<%--											<td>--%>
+<%--												<div class="progress">--%>
+<%--													<div class="progress-bar bg-gradient-primary" role="progressbar"--%>
+<%--														 style="width: 100%" aria-valuenow="100" aria-valuemin="0"--%>
+<%--														 aria-valuemax="100"></div>--%>
+<%--												</div>--%>
+<%--											</td>--%>
+<%--										</tr>--%>
+<%--										<tr>--%>
+<%--											<td>--%>
+<%--												1001--%>
+<%--											</td>--%>
+<%--											<td>--%>
+<%--												<label class="badge badge-gradient-info">儿科</label>--%>
+<%--											</td>--%>
+<%--											<td>--%>
+<%--												Obeve--%>
+<%--											</td>--%>
+<%--											<td>--%>
+<%--												4/6--%>
+<%--											</td>--%>
+<%--											<td>--%>
+<%--												<div class="progress">--%>
+<%--													<div class="progress-bar bg-gradient-danger" role="progressbar"--%>
+<%--														 style="width: 66%" aria-valuenow="66" aria-valuemin="0"--%>
+<%--														 aria-valuemax="100"></div>--%>
+<%--												</div>--%>
+<%--											</td>--%>
+<%--										</tr>--%>
+<%--										<tr>--%>
+<%--											<td>--%>
+<%--												1002--%>
+<%--											</td>--%>
+<%--											<td>--%>
+<%--												<label class="badge badge-gradient-info">儿科</label>--%>
+<%--											</td>--%>
+<%--											<td>--%>
+<%--												Jun--%>
+<%--											</td>--%>
+<%--											<td>--%>
+<%--												3/4--%>
+<%--											</td>--%>
+<%--											<td>--%>
+<%--												<div class="progress">--%>
+<%--													<div class="progress-bar bg-gradient-info" role="progressbar"--%>
+<%--														 style="width: 75%" aria-valuenow="75" aria-valuemin="0"--%>
+<%--														 aria-valuemax="100"></div>--%>
+<%--												</div>--%>
+<%--											</td>--%>
+<%--										</tr>--%>
 										</tbody>
 									</table>
 								</div>

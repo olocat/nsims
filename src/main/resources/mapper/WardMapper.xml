@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.olocat.nsims.mapper.WardMapper">
+	<sql id="table">ps_ward</sql>
+	<select id="getWardList" resultType="com.olocat.nsims.pojo.Ward">
+		select * from <include refid="table"/> limit 15
+	</select>
+	<select id="getWardByNumber" parameterType="Integer" resultType="com.olocat.nsims.pojo.Ward">
+		select * from <include refid="table"/>
+		<where>
+			number=#{value}
+		</where>
+		limit 1
+	</select>
+	<update id="updateWard" parameterType="com.olocat.nsims.pojo.Ward">
+		update <include refid="table"/>
+		<set>
+			<if test="number != null">
+				number=#{number},
+			</if>
+			<if test="department != null and department != '' ">
+				department=#{department},
+			</if>
+			<if test="doctorID != null and doctorID != ''">
+				doctorID=#{doctorID}
+			</if>
+			<if test="berths != null">
+				berths=#{berths}
+			</if>
+		</set>
+		where number=#{number}
+	</update>
+	<insert id="addWard" parameterType="com.olocat.nsims.pojo.Ward">
+		insert into
+		<include refid="table"/>
+		value(
+		#{number},
+		#{department},
+		#{doctorID},
+		#{berths}
+		)
+	</insert>
+	<delete id="deleteWardByNumber" parameterType="Integer">
+		delete from <include refid="table"/>
+		<where>
+			number=#{number}
+		</where>
+	</delete>
+</mapper>

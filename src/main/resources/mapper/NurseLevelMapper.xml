@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.olocat.nsims.mapper.NurseLevelMapper">
+	<sql id="table">im_nurseLevel</sql>
+	<select id="getNurseLevelList" resultType="com.olocat.nsims.pojo.information.NurseLevel">
+		select * from <include refid="table"/>
+	</select>
+</mapper>

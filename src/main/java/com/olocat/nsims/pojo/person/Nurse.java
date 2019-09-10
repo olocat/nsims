@@ -1,11 +1,11 @@
-package com.olocat.nsims.pojo.personnel;
+package com.olocat.nsims.pojo.person;
 
 /**
  * 护士信息类
  * @author olocat
  * @date 2019/9/9
  * @table nurse
- * @version 0.1.0
+ * @version 0.2.1
  */
 public class Nurse {
 
@@ -16,7 +16,8 @@ public class Nurse {
 	private String phoneNumber; //联系电话
 	private String responsibleWard;	//负责病房
 	private String position;	//职位
-	private String department;	//科室
+	private int departmentID;	//科室
+	private int level;			//护士等级
 
 	public String getNurseID() {
 		return nurseID;
@@ -74,11 +75,19 @@ public class Nurse {
 		this.position = position;
 	}
 
-	public String getDepartment() {
-		return department;
+	public int getDepartmentID() {
+		return departmentID;
 	}
 
-	public void setDepartment(String department) {
-		this.department = department;
+	public void setDepartmentID(int departmentID) {
+		this.departmentID = departmentID;
+	}
+
+	public int getLevel() {
+		return level;
+	}
+
+	public void setLevel(int level) {
+		this.level = level;
 	}
 }

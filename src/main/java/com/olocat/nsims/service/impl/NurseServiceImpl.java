@@ -1,7 +1,7 @@
 package com.olocat.nsims.service.impl;
 
 import com.olocat.nsims.mapper.NurseMapper;
-import com.olocat.nsims.pojo.personnel.Nurse;
+import com.olocat.nsims.pojo.person.Nurse;
 import com.olocat.nsims.service.NurseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * 护士服务类
+ * 护士服务实体类
  * @author olocat
  * @date 2019/9/9
  * @version 0.1.0

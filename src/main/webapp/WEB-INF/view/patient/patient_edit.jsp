@@ -37,7 +37,7 @@
 					<nav aria-label="breadcrumb">
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item">
-								<a href="${pageContext.request.contextPath}/patient_info">住院信息</a>
+								<a href="${pageContext.request.contextPath}/patient">住院信息</a>
 							</li>
 							<li class="breadcrumb-item active" aria-current="page">修改住院信息</li>
 						</ol>
@@ -235,7 +235,7 @@
 									<i class="mdi mdi-alert btn-icon-prepend"></i>
 									重置
 								</button>
-								<a href="${pageContext.request.contextPath}/patient_info">
+								<a href="${pageContext.request.contextPath}/patient">
 								<button type="button" class="btn btn-gradient-danger btn-icon-text">
 									<i class="mdi mdi-upload btn-icon-prepend"></i>
 									返回

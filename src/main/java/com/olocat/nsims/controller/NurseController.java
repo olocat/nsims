@@ -1,6 +1,10 @@
 package com.olocat.nsims.controller;
 
-import com.olocat.nsims.pojo.personnel.Nurse;
+import com.olocat.nsims.pojo.information.Department;
+import com.olocat.nsims.pojo.information.NurseLevel;
+import com.olocat.nsims.pojo.person.Nurse;
+import com.olocat.nsims.service.DepartmentService;
+import com.olocat.nsims.service.NurseLevelService;
 import com.olocat.nsims.service.NurseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,11 +12,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 /**
  * 护士信息控制类
  * @author olocat
  * @date 2019/9/9
- * @version 0.1.1
+ * @version 0.1.2
  * @viewPath /WEB-INF/view/nurse/**.jsp
  */
 @Controller
@@ -21,7 +27,10 @@ public class NurseController {
 
 	@Autowired(required = false)
 	NurseService nurseService;
-
+	@Autowired(required = false)
+	DepartmentService departmentService;
+	@Autowired(required = false)
+	NurseLevelService nurseLevelService;
 	/**
 	 * 获取护士修改页面
 	 * @param nurseID 护士 ID
@@ -31,6 +40,10 @@ public class NurseController {
 	@RequestMapping("/toEdit")
 	public String toEdit(@RequestParam(value = "nurseID") String nurseID, Model model){
 		Nurse nurse = nurseService.getNurseByID(nurseID);
+		List<Department> departments = departmentService.getDepartmentList();
+		List<NurseLevel> nurseLevels = nurseLevelService.getNurseLevelList();
+		model.addAttribute("departments",departments);
+		model.addAttribute("nurseLevels",nurseLevels);
 		model.addAttribute("nurse",nurse);
 		return "nurse/nurse_edit";
 	}
@@ -43,7 +56,7 @@ public class NurseController {
 	@RequestMapping("/doEdit")
 	public String doEdit(Nurse nurse){
 		nurseService.updateNurse(nurse);
-		return "redirect:/nurse_info";
+		return "redirect:/nurse";
 	}
 
 	/**
@@ -51,7 +64,11 @@ public class NurseController {
 	 * @return 添加护士页面所在路径
 	 */
 	@RequestMapping("/toAdd")
-	public String toAdd(){
+	public String toAdd(Model model){
+		List<Department> departments = departmentService.getDepartmentList();
+		List<NurseLevel> doctorLevels = nurseLevelService.getNurseLevelList();
+		model.addAttribute("level",doctorLevels);
+		model.addAttribute("departments",departments);
 		return "/nurse/nurse_add";
 	}
 
@@ -61,7 +78,7 @@ public class NurseController {
 	 * @return 添加完成后返回 首页
 	 */
 	@RequestMapping("/doAdd")
-	public String add(Nurse nurse){
+	public String doAdd(Nurse nurse){
 		nurseService.addNurse(nurse);
 		return "redirect:/index";
 	}
@@ -74,7 +91,7 @@ public class NurseController {
 	@RequestMapping("/doDelete")
 	public String delete(String nurseID){
 		nurseService.deleteNurseByID(nurseID);
-		return "redirect:/nurse_info";
+		return "redirect:/nurse";
 	}
 
 }

@@ -23,8 +23,10 @@
     <slf4j.version>1.7.28</slf4j.version>
     <junit.version>4.11</junit.version>
     <mysql.version>8.0.17</mysql.version>
-    <c3p0.version>0.9.5.4</c3p0.version>
+<!--    <c3p0.version>0.9.5.4</c3p0.version>-->
+    <druid.version>1.0.13</druid.version>
     <jstl.version>1.2</jstl.version>
+    <servlet.version>4.0.1</servlet.version>
     <spring.version>5.1.9.RELEASE</spring.version>
     <aopalliance.version>1.0</aopalliance.version>
     <aspectjweaver.version>1.9.4</aspectjweaver.version>
@@ -78,15 +80,27 @@
       <artifactId>mysql-connector-java</artifactId>
       <version>${mysql.version}</version>
     </dependency>
-    <dependency>
-      <groupId>com.mchange</groupId>
-      <artifactId>c3p0</artifactId>
-      <version>${c3p0.version}</version>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>com.mchange</groupId>-->
+<!--      <artifactId>c3p0</artifactId>-->
+<!--      <version>${c3p0.version}</version>-->
+<!--    </dependency>-->
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>jstl</artifactId>
       <version>${jstl.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>${servlet.version}</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid</artifactId>
+      <version>${druid.version}</version>
     </dependency>
 
     <!-- spring 框架所需jar包 -->

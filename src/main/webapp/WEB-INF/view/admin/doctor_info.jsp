@@ -83,10 +83,10 @@
 													${doctor.name}
 												</td>
 												<td>
-													<label class="badge badge-gradient-primary">${doctor.position}</label>
+													<label class="badge badge-gradient-primary">${dlmap[doctor.level]}</label>
 												</td>
 												<td>
-													<label class="badge badge-gradient-success">${doctor.department}</label>
+													<label class="badge badge-gradient-success">${map[doctor.departmentID]}</label>
 												</td>
 												<td>
 													${doctor.doctorID}

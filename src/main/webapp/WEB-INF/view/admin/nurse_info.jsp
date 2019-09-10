@@ -68,6 +68,9 @@
 												科室
 											</th>
 											<th>
+												职位
+											</th>
+											<th>
 												护士 ID
 											</th>
 											<th>
@@ -86,7 +89,10 @@
 												${nurse.responsibleWard}
 											</td>
 											<td>
-												<label class="badge badge-gradient-success">外科</label>
+												<label class="badge badge-gradient-success">${map[nurse.departmentID]}</label>
+											</td>
+											<td>
+												<label class="badge badge-gradient-primary">${nlmap[nurse.level]}</label>
 											</td>
 											<td>
 												${nurse.nurseID}

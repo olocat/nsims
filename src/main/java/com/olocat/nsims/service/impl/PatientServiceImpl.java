@@ -1,7 +1,7 @@
 package com.olocat.nsims.service.impl;
 
 import com.olocat.nsims.mapper.PatientMapper;
-import com.olocat.nsims.pojo.personnel.Patient;
+import com.olocat.nsims.pojo.person.Patient;
 import com.olocat.nsims.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
