@@ -20,7 +20,7 @@ public class Patient {
 	private String bloodType;		//血型
 	private String patientCondition;		//病况
 	private String doctorID;		//主治医师id
-	private String department;		//科室
+	private int departmentID;		//科室 ID
 	private int ward;		//病房
 	private int bedNumber;	//床位号
 	private String diseaseInformation; //病情信息
@@ -121,14 +121,6 @@ public class Patient {
 		this.doctorID = doctorID;
 	}
 
-	public String getDepartment() {
-		return department;
-	}
-
-	public void setDepartment(String department) {
-		this.department = department;
-	}
-
 	public int getWard() {
 		return ward;
 	}
@@ -151,5 +143,13 @@ public class Patient {
 
 	public void setDiseaseInformation(String diseaseInformation) {
 		this.diseaseInformation = diseaseInformation;
+	}
+
+	public int getDepartmentID() {
+		return departmentID;
+	}
+
+	public void setDepartmentID(int departmentID) {
+		this.departmentID = departmentID;
 	}
 }

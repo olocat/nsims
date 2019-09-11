@@ -3,6 +3,7 @@ package com.olocat.nsims.service;
 import com.olocat.nsims.pojo.person.Doctor;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 医生服务层接口
@@ -42,4 +43,6 @@ public interface DoctorService {
 	 * @param doctorID 被删除的医生 ID
 	 */
 	void deleteDoctorByID(String doctorID);
+
+	Map<String,String> getDoctorMap();
 }

@@ -21,7 +21,7 @@
 		#{bloodType},
 		#{patientCondition},
 		#{doctorID},
-		#{department},
+		#{departmentID},
 		#{ward},
 		#{bedNumber},
 		#{diseaseInformation}
@@ -72,8 +72,8 @@
 			<if test="doctorID != null and doctorID != '' ">
 				doctorID=#{doctorID},
 			</if>
-			<if test="department != null and department != '' ">
-				department=#{department},
+			<if test="departmentID != null and departmentID != '' ">
+				departmentID=#{departmentID},
 			</if>
 			<if test="ward != null and ward != '' ">
 				ward=#{ward},

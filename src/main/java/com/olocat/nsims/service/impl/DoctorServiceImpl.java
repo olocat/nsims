@@ -6,7 +6,9 @@ import com.olocat.nsims.service.DoctorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 医生服务层实体类
@@ -43,5 +45,15 @@ public class DoctorServiceImpl implements DoctorService {
 	@Override
 	public void deleteDoctorByID(String doctorID) {
 		doctorMapper.deleteDoctorByID(doctorID);
+	}
+
+	@Override
+	public Map<String,String> getDoctorMap(){
+		List<Doctor> doctorList = this.getDoctorList();
+		Map<String ,String> doctorMap = new HashMap<>();
+		for(Doctor d : doctorList){
+			doctorMap.put(d.getDoctorID(),d.getName());
+		}
+		return doctorMap;
 	}
 }

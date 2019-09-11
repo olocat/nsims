@@ -1,12 +1,22 @@
 package com.olocat.nsims.controller;
 
+import com.olocat.nsims.pojo.Ward;
+import com.olocat.nsims.pojo.information.Department;
+import com.olocat.nsims.pojo.person.Doctor;
 import com.olocat.nsims.pojo.person.Patient;
+import com.olocat.nsims.service.DepartmentService;
+import com.olocat.nsims.service.DoctorService;
 import com.olocat.nsims.service.PatientService;
+import com.olocat.nsims.service.WardService;
+import org.apache.tools.ant.taskdefs.War;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * 住院信息页面控制类
@@ -21,6 +31,12 @@ public class PatientController {
 
 	@Autowired(required = false)
 	private PatientService patientService;
+	@Autowired
+	private DepartmentService departmentService;
+	@Autowired
+	private DoctorService doctorService;
+	@Autowired
+	private WardService wardService;
 
 	/**
 	 * 执行添加病人信息
@@ -29,18 +45,8 @@ public class PatientController {
 	 * @return 添加完成后返回 主页
 	 */
 	@RequestMapping("/doAdd")
-	public String add(Patient patient, Model model){
-		System.out.println(patient);
-		System.out.println(patient.getPatientID());
-		System.out.println(patient.getName());
-		System.out.println(patient.getAge());
-		System.out.println(patient.getBloodType());
-		if(patientService == null){
-			System.out.println("patientService is null");
-		} else {
-			patientService.addPatient(patient);
-			System.out.println("添加完成");
-		}
+	public String add(Patient patient, Model model) {
+		patientService.addPatient(patient);
 		return "redirect:/index";
 	}
 
@@ -49,7 +55,13 @@ public class PatientController {
 	 * @return 返回添加病人信息页面路径
 	 */
 	@RequestMapping("/toAdd")
-	public String toAdd(){
+	public String toAdd(Model model){
+		List<Department> departments = departmentService.getDepartmentList();
+		List<Doctor> doctors = doctorService.getDoctorList();
+		List<Ward> wards = wardService.getWardList();
+		model.addAttribute("wards",wards);
+		model.addAttribute("doctors",doctors);
+		model.addAttribute("departments",departments);
 		return "patient/patient_add";
 	}
 
@@ -61,8 +73,14 @@ public class PatientController {
 	 */
 	@RequestMapping("/toEdit")
 	public String edit(@RequestParam(value = "patientID") String patientID, Model model){
+		List<Department> departments = departmentService.getDepartmentList();
 		Patient patient = patientService.getPatientById(patientID);
+		List<Doctor> doctors = doctorService.getDoctorList();
+		List<Ward> wards = wardService.getWardList();
+		model.addAttribute("wards",wards);
+		model.addAttribute("doctors",doctors);
 		model.addAttribute("patient",patient);
+		model.addAttribute("departments",departments);
 		return "patient/patient_edit";
 	}
 
@@ -74,7 +92,7 @@ public class PatientController {
 	@RequestMapping("/doEdit")
 	public String editDo(Patient patient){
 		patientService.updatePatient(patient);
-		return "redirect:/patient_info";
+		return "redirect:/patient";
 	}
 
 	/**
@@ -85,6 +103,6 @@ public class PatientController {
 	@RequestMapping("/doDelete")
 	public String delete(@RequestParam(value = "patientID") String patientID){
 		patientService.deletePatientById(patientID);
-		return "redirect:/patient_info";
+		return "redirect:/patient";
 	}
 }

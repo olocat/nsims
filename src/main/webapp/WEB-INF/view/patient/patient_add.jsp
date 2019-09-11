@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="cn">
 <%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="java.util.*"%>
@@ -43,7 +44,7 @@
 					<nav aria-label="breadcrumb">
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item">
-								<a href="${pageContext.request.contextPath}/patient_info">主页</a>
+								<a href="${pageContext.request.contextPath}/patient">主页</a>
 							</li>
 							<li class="breadcrumb-item active" aria-current="page">办理住院</li>
 						</ol>
@@ -159,14 +160,6 @@
 											</div>
 										</div>
 									</div>
-<%--									<div class="col-md-6">--%>
-<%--										<div class="form-group row">--%>
-<%--											<label class="col-sm-3 col-form-label">血型</label>--%>
-<%--											<div class="col-sm-9">--%>
-<%--												<input class="form-control" name="bloodType"/>--%>
-<%--											</div>--%>
-<%--										</div>--%>
-<%--									</div>--%>
 									<div class="col-md-6">
 										<div class="form-group row">
 											<label class="col-sm-3 col-form-label">病况</label>
@@ -179,17 +172,27 @@
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group row">
-											<label class="col-sm-3 col-form-label">责任医师</label>
+											<label class="col-sm-3 col-form-label">科室</label>
 											<div class="col-sm-9">
-												<input class="form-control" name="doctorID"/>
+												<select class="form-control" name="departmentID">
+													<c:forEach items="${departments}" var="department">
+														<option value="${department.departmentID}">
+																${department.name}</option>
+													</c:forEach>
+												</select>
 											</div>
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group row">
-											<label class="col-sm-3 col-form-label">科室</label>
+											<label class="col-sm-3 col-form-label">责任医师</label>
 											<div class="col-sm-9">
-												<input class="form-control" name="department"/>
+												<select class="form-control" name="doctorID">
+													<c:forEach items="${doctors}" var="doctor">
+														<option value="${doctor.doctorID}">
+																${doctor.name}</option>
+													</c:forEach>
+												</select>
 											</div>
 										</div>
 									</div>
@@ -199,7 +202,13 @@
 										<div class="form-group row">
 											<label class="col-sm-3 col-form-label">病房</label>
 											<div class="col-sm-9">
-												<input type="text" class="form-control" name="ward"/>
+												<select class="form-control" name="ward">
+												<c:forEach items="${wards}" var="ward">
+													<option value="${ward.number}">
+														${ward.number}
+													</option>
+												</c:forEach>
+												</select>
 											</div>
 										</div>
 									</div>

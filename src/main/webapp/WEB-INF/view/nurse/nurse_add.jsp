@@ -78,7 +78,10 @@
 											<div class="col-sm-9">
 												<select class="form-control" name="gender">
 													<option value="男">男</option>
-													<option value="女">女</option>
+													<option value="女"
+															<c:if test="${nurse.gender == '女'}" > selected="selected" </c:if>
+													>
+														女</option>
 												</select>
 											</div>
 										</div>
@@ -118,9 +121,10 @@
 											<div class="col-sm-9">
 												<select class="form-control" name="level">
 													<c:forEach items="${level}" var="level">
-														<option value="${level.level}"> ${level.name} </option>
+														<option value="${level.level}">
+																${level.name}</option>
 													</c:forEach>
-												</select
+												</select>
 											</div>
 										</div>
 									</div>
@@ -129,8 +133,11 @@
 											<label class="col-sm-3 col-form-label">科室</label>
 											<div class="col-sm-9">
 												<select class="form-control" name="departmentID">
-													<c:forEach items="${departments}" var="department" varStatus="stu">
-														<option value="${department.departmentID}">${department.name}</option>
+													<c:forEach items="${departments}" var="department">
+														<option value="${department.departmentID}"
+																<c:if test="${department.departmentID == nurse.departmentID}">selected="selected"</c:if>
+														>
+																${department.name}</option>
 													</c:forEach>
 												</select>
 											</div>

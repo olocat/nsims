@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="cn">
 <%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="java.util.*"%>
@@ -71,17 +72,6 @@
 									</div>
 								</div>
 								<div class="row">
-									<%--									<div class="col-md-6">--%>
-									<%--										<div class="form-group row">--%>
-									<%--											<label class="col-sm-3 col-form-label">性别</label>--%>
-									<%--											<div class="col-sm-9">--%>
-									<%--												<select class="form-control" name="gender">--%>
-									<%--													<option value="male">男</option>--%>
-									<%--													<option value="female">女</option>--%>
-									<%--												</select>--%>
-									<%--											</div>--%>
-									<%--										</div>--%>
-									<%--									</div>--%>
 									<div class="col-md-6">
 										<div class="form-group row">
 											<label class="col-sm-3 col-form-label">性别</label>
@@ -139,25 +129,17 @@
 									医疗信息 :
 								</p>
 								<div class="row">
-									<%--									<div class="col-md-6">--%>
-									<%--										<div class="form-group row">--%>
-									<%--											<label class="col-sm-3 col-form-label">血型</label>--%>
-									<%--											<div class="col-sm-9">--%>
-									<%--												<select class="form-control" name="bloodType">--%>
-									<%--													<option value="A">A</option>--%>
-									<%--													<option value="B">B</option>--%>
-									<%--													<option value="0">O</option>--%>
-									<%--													<option value="AB">AB</option>--%>
-									<%--													<option value="special">特殊</option>--%>
-									<%--												</select>--%>
-									<%--											</div>--%>
-									<%--										</div>--%>
-									<%--									</div>--%>
 									<div class="col-md-6">
 										<div class="form-group row">
 											<label class="col-sm-3 col-form-label">血型</label>
 											<div class="col-sm-9">
-												<input class="form-control" name="bloodType" value="${patient.bloodType}"/>
+												<select class="form-control" name="bloodType">
+													<option value="A" <c:if test="${patient.bloodType == 'A'}">selected="selected"</c:if>>A</option>
+													<option value="B" <c:if test="${patient.bloodType == 'B'}">selected="selected"</c:if>>B</option>
+													<option value="AB" <c:if test="${patient.bloodType == 'AB'}">selected="selected"</c:if>>AB</option>
+													<option value="O" <c:if test="${patient.bloodType == 'A'}">selected="selected"</c:if>>O</option>
+													<option value="特殊" <c:if test="${patient.bloodType == '特殊'}">selected="selected"</c:if>>特殊</option>
+												</select>
 											</div>
 										</div>
 									</div>
@@ -173,17 +155,31 @@
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group row">
-											<label class="col-sm-3 col-form-label">责任医师</label>
+											<label class="col-sm-3 col-form-label">科室</label>
 											<div class="col-sm-9">
-												<input class="form-control" name="doctorID" value="${patient.doctorID}"/>
+												<select class="form-control" name="departmentID">
+													<c:forEach items="${departments}" var="department">
+														<option value="${department.departmentID}"
+																<c:if test="${department.departmentID == patient.departmentID}">selected="selected"</c:if>
+														>
+																${department.name}</option>
+													</c:forEach>
+												</select>
 											</div>
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group row">
-											<label class="col-sm-3 col-form-label">科室</label>
+											<label class="col-sm-3 col-form-label">责任医师</label>
 											<div class="col-sm-9">
-												<input class="form-control" name="department" value="${patient.department}"/>
+												<select class="form-control" name="doctorID">
+													<c:forEach items="${doctors}" var="doctor">
+														<option value="${doctor.doctorID}"
+																<c:if test="${patient.doctorID == doctor.doctorID}">selected="selected"</c:if>
+														>
+																${doctor.name}</option>
+													</c:forEach>
+												</select>
 											</div>
 										</div>
 									</div>
@@ -193,7 +189,15 @@
 										<div class="form-group row">
 											<label class="col-sm-3 col-form-label">病房</label>
 											<div class="col-sm-9">
-												<input type="text" class="form-control" name="ward" value="${patient.ward}"/>
+												<select class="form-control" name="ward">
+													<c:forEach items="${wards}" var="ward">
+														<option value="${ward.number}"
+																<c:if test="${ward.number == patient.ward}">selected="selected"</c:if>
+														>
+																${ward.number}
+														</option>
+													</c:forEach>
+												</select>
 											</div>
 										</div>
 									</div>
@@ -205,21 +209,6 @@
 											</div>
 										</div>
 									</div>
-									<%--									<div class="col-md-6">--%>
-									<%--										<div class="form-group row">--%>
-									<%--											<label class="col-sm-3 col-form-label">床位</label>--%>
-									<%--											<div class="col-sm-9">--%>
-									<%--												<select class="form-control" name="bedNumber">--%>
-									<%--													<option value="01">01</option>--%>
-									<%--													<option value="02">02</option>--%>
-									<%--													<option value="03">03</option>--%>
-									<%--													<option value="04">04</option>--%>
-									<%--													<option value="05">05</option>--%>
-									<%--													<option value="06">06</option>--%>
-									<%--												</select>--%>
-									<%--											</div>--%>
-									<%--										</div>--%>
-									<%--									</div>--%>
 								</div>
 								<div class="row">
 									<label class="col-sm-9 col-form-label">病情信息</label>
