@@ -32,7 +32,7 @@
     <aspectjweaver.version>1.9.4</aspectjweaver.version>
     <mybatis.version>3.5.2</mybatis.version>
     <mybatis.spring.version>2.0.2</mybatis.spring.version>
-    <ant.version>1.10.6</ant.version>
+    <ant.version>1.10.8</ant.version>
     <asm.version>7.1</asm.version>
     <cglib.version>3.3.0</cglib.version>
     <javassist.version>3.25.0-GA</javassist.version>
