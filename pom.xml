@@ -19,7 +19,7 @@
     <maven.compiler.target>1.7</maven.compiler.target>
     <log4j.version>1.2.17</log4j.version>
     <log4j.api.version>2.12.1</log4j.api.version>
-    <log4j.core.version>2.12.1</log4j.core.version>
+    <log4j.core.version>2.15.0</log4j.core.version>
     <slf4j.version>1.7.28</slf4j.version>
     <junit.version>4.11</junit.version>
     <mysql.version>8.0.17</mysql.version>
