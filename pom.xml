@@ -22,7 +22,7 @@
     <log4j.core.version>2.12.1</log4j.core.version>
     <slf4j.version>1.7.28</slf4j.version>
     <junit.version>4.11</junit.version>
-    <mysql.version>8.0.17</mysql.version>
+    <mysql.version>8.0.28</mysql.version>
 <!--    <c3p0.version>0.9.5.4</c3p0.version>-->
     <druid.version>1.0.13</druid.version>
     <jstl.version>1.2</jstl.version>
