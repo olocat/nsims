@@ -27,7 +27,7 @@
     <druid.version>1.0.13</druid.version>
     <jstl.version>1.2</jstl.version>
     <servlet.version>4.0.1</servlet.version>
-    <spring.version>5.1.9.RELEASE</spring.version>
+    <spring.version>5.2.20.RELEASE</spring.version>
     <aopalliance.version>1.0</aopalliance.version>
     <aspectjweaver.version>1.9.4</aspectjweaver.version>
     <mybatis.version>3.5.2</mybatis.version>
